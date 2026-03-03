@@ -1,0 +1,94 @@
+game:
+  min-players: 2
+  max-players: 16
+  countdown-time: 20
+  round-duration: 60
+  round-end-delay: 5
+  capsule-release-delay: 3
+  slow-fall-duration: 60
+  spawn-protection: 3
+  win-fireworks: true
+
+circle:
+  radius: 4
+  material: CONCRETE
+  check-interval: 4
+
+effects:
+  circle-particles: true
+  elimination-effect: true
+
+shulker:
+  items-per-shulker: 3
+  loot:
+    IRON_SWORD: 50
+    GOLDEN_APPLE: 30
+    ENDER_PEARL: 20
+    KNOCKBACK_STICK: 10
+    BOW: 15
+    ARROW: 40
+
+tokens:
+  kill: 10
+  win: 50
+  survive-round: 5
+  first-blood: 15
+  top3-bonus: 20
+
+points:
+  kill: 5
+  win: 25
+  first-blood: 10
+  top3-bonus: 10
+
+scoreboard:
+  enabled: true
+  update-interval: 10
+  title: "&b&l✦ ENSDAIRE ✦"
+  footer: "&7craftluna.net"
+
+actionbar:
+  enabled: true
+
+sounds:
+  countdown: "BLOCK_NOTE_BLOCK_PLING"
+  round-start: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  elimination: "ENTITY_PLAYER_DEATH"
+  win: "UI_TOAST_CHALLENGE_COMPLETE"
+  shulker-open: "ENTITY_SHULKER_OPEN"
+
+messages:
+  prefix: "&8[&bEnsDaire&8] &r"
+  join: "&7{current}/{max} &eoyuncu katıldı!"
+  leave: "&cBir oyuncu ayrıldı."
+  not-enough-players: "&cBaşlamak için en az {min} oyuncu gerekiyor!"
+  game-start: "&aOyun başladı! Başarılar."
+  round-start: "&eRound {round} başladı!"
+  round-end: "&7Round {round} bitti!"
+  eliminated-circle: "&cAlan dışında kaldığın için elendin!"
+  eliminated-killed: "&c{killer} tarafından elendin!"
+  spectator: "&7Artık izleyici modundasın."
+  win: "&6{player} &eoyunu kazandı!"
+  first-blood: "&cİLK KAN! &f{player} &7tarafından döküldü!"
+  token-earned: "&a+{amount} &7jeton kazandın! &8(&e{total}&8)"
+  rank-up: "&6TEBRİKLER! &7Yeni rütben: &f{rank}"
+  no-permission: "&cBu komut için yetkiniz yok!"
+  already-in-game: "&cZaten bir oyundasın!"
+  arena-not-found: "&cArena bulunamadı: {arena}"
+  game-full: "&cArena dolu! {current}/{max}"
+  game-not-joinable: "&cBu oyun şu an katılım için uygun değil."
+  player-only: "&cBu komutu sadece oyuncular kullanabilir!"
+
+ranks:
+  - name: "Çaylak"
+    prefix: "&7[Çaylak]"
+    token-requirement: 0
+  - name: "Amatör"
+    prefix: "&a[Amatör]"
+    token-requirement: 500
+  - name: "Uzman"
+    prefix: "&e[Uzman]"
+    token-requirement: 2000
+  - name: "Efsane"
+    prefix: "&6[Efsane]"
+    token-requirement: 10000

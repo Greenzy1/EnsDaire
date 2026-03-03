@@ -1,0 +1,23 @@
+name: EnsDaire
+version: '${project.version}'
+main: net.ensdaireplugin.ensdaire.EnsDaire
+api-version: '1.20'
+description: Daireden Son Çıkan Kazanır - EnsDaire Mini Game
+authors: [EnsDairePlugin]
+
+commands:
+  ensdaire:
+    description: EnsDaire ana komutu
+    aliases: [ed, daire]
+    usage: /ensdaire <komut>
+
+permissions:
+  ensdaire.play:
+    description: Oyuna katılma izni
+    default: true
+  ensdaire.admin:
+    description: Admin komutları
+    default: op
+  ensdaire.bypass:
+    description: Oyun kısıtlamalarını atla
+    default: op
