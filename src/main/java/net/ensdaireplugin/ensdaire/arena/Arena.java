@@ -7,6 +7,7 @@ import net.ensdaireplugin.ensdaire.player.StateSnapshot;
 import net.ensdaireplugin.ensdaire.utils.FX;
 import net.ensdaireplugin.ensdaire.utils.Msg;
 import net.ensdaireplugin.ensdaire.utils.SB;
+import net.ensdaireplugin.ensdaire.utils.VersionUtils;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Firework;

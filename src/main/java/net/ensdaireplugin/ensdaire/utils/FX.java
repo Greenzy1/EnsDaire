@@ -1,5 +1,6 @@
 package net.ensdaireplugin.ensdaire.utils;
 
+import net.ensdaireplugin.ensdaire.utils.VersionUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
@@ -31,7 +32,7 @@ public class FX {
     }
 
     public static void elimination(Location loc) {
-        loc.getWorld().spawnParticle(Particle.EXPLOSION_HUGE, loc.add(0, 1, 0), 1);
+        loc.getWorld().spawnParticle(VersionUtils.getExplosionParticle(), loc.add(0, 1, 0), 1);
         loc.getWorld().spawnParticle(Particle.FLAME, loc, 30, 0.5, 0.5, 0.5, 0.1);
         loc.getWorld().playSound(loc, Sound.ENTITY_GENERIC_EXPLODE, 1f, 1f);
     }
