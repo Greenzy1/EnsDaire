@@ -8,117 +8,96 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 
 public class ArenaManager {
-
     private final EnsDaire plugin;
-    private final Map<String, Arena> arenas = new LinkedHashMap<>();
-    private final File arenasFile;
-    private FileConfiguration cfg;
+    private final Map<String, Arena> arenas = new HashMap<>();
 
     public ArenaManager(EnsDaire plugin) {
         this.plugin = plugin;
-        this.arenasFile = new File(plugin.getDataFolder(), "arenas.yml");
     }
 
     public void loadArenas() {
-        if (!arenasFile.exists()) {
-            try { arenasFile.createNewFile(); } catch (IOException e) { e.printStackTrace(); }
-        }
-        cfg = YamlConfiguration.loadConfiguration(arenasFile);
+        arenas.clear();
+        File folder = new File(plugin.getDataFolder(), "arenas");
+        if (!folder.exists()) folder.mkdirs();
 
-        if (!cfg.isConfigurationSection("arenas")) return;
+        File[] files = folder.listFiles((dir, name) -> name.endsWith(".yml"));
+        if (files == null) return;
 
-        for (String id : cfg.getConfigurationSection("arenas").getKeys(false)) {
-            Arena a = new Arena(plugin, id);
-            String p = "arenas." + id;
-
-            Location lobby = locFromStr(cfg.getString(p + ".lobby"));
-            Location spec  = locFromStr(cfg.getString(p + ".spectator"));
-            if (lobby != null) a.setLobbySpawn(lobby);
-            if (spec  != null) a.setSpectatorSpawn(spec);
-
-            for (String s : cfg.getStringList(p + ".capsules")) {
-                Location l = locFromStr(s); if (l != null) a.getCapsuleSpawns().add(l);
+        for (File file : files) {
+            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
+            String id = file.getName().replace(".yml", "");
+            Arena arena = new Arena(plugin, id);
+            
+            if (config.contains("lobby")) arena.setLobbySpawn(deserializeLoc(config.getString("lobby")));
+            if (config.contains("spectator")) arena.setSpectatorSpawn(deserializeLoc(config.getString("spectator")));
+            if (config.contains("capsules")) {
+                for (String s : config.getStringList("capsules")) {
+                    Location l = deserializeLoc(s);
+                    if (l != null) arena.getCapsuleSpawns().add(l);
+                }
             }
-            for (String s : cfg.getStringList(p + ".shulker-spawns")) {
-                Location l = locFromStr(s); if (l != null) a.getShulkerSpawns().add(l);
+            if (config.contains("shulkers")) {
+                for (String s : config.getStringList("shulkers")) {
+                    Location l = deserializeLoc(s);
+                    if (l != null) arena.getShulkerSpawns().add(l);
+                }
             }
-
-            boolean disabled = cfg.getBoolean(p + ".disabled", false);
-            if (disabled) a.setState(net.ensdaireplugin.ensdaire.game.GameState.DISABLED);
-
-            arenas.put(id, a);
-            plugin.getLogger().info("  Arena yüklendi: " + id);
+            arenas.put(id, arena);
         }
     }
 
     public void saveArenas() {
-        if (cfg == null) cfg = YamlConfiguration.loadConfiguration(arenasFile);
+        File folder = new File(plugin.getDataFolder(), "arenas");
+        for (Arena arena : arenas.values()) {
+            File file = new File(folder, arena.getId() + ".yml");
+            FileConfiguration config = new YamlConfiguration();
+            
+            if (arena.getLobbySpawn() != null) config.set("lobby", serializeLoc(arena.getLobbySpawn()));
+            if (arena.getSpectatorSpawn() != null) config.set("spectator", serializeLoc(arena.getSpectatorSpawn()));
+            
+            List<String> caps = new ArrayList<>();
+            for (Location l : arena.getCapsuleSpawns()) caps.add(serializeLoc(l));
+            config.set("capsules", caps);
 
-        for (Arena a : arenas.values()) {
-            String p = "arenas." + a.getId();
-            if (a.getLobbySpawn()     != null) cfg.set(p + ".lobby",      locToStr(a.getLobbySpawn()));
-            if (a.getSpectatorSpawn() != null) cfg.set(p + ".spectator",  locToStr(a.getSpectatorSpawn()));
-            cfg.set(p + ".capsules",      a.getCapsuleSpawns().stream().map(this::locToStr).toList());
-            cfg.set(p + ".shulker-spawns",a.getShulkerSpawns().stream().map(this::locToStr).toList());
-            cfg.set(p + ".disabled", a.getState() == net.ensdaireplugin.ensdaire.game.GameState.DISABLED);
+            List<String> shulks = new ArrayList<>();
+            for (Location l : arena.getShulkerSpawns()) shulks.add(serializeLoc(l));
+            config.set("shulkers", shulks);
+
+            try { config.save(file); } catch (Exception ignored) {}
         }
-
-        try { cfg.save(arenasFile); } catch (IOException e) { e.printStackTrace(); }
     }
 
-    public Arena create(String id) {
-        Arena a = new Arena(plugin, id);
-        arenas.put(id, a);
-        saveArenas();
-        return a;
-    }
-
-    public boolean delete(String id) {
-        Arena a = arenas.remove(id);
-        if (a == null) return false;
-        a.stopAllTasks();
-        if (cfg != null) {
-            cfg.set("arenas." + id, null);
-            try { cfg.save(arenasFile); } catch (IOException e) { e.printStackTrace(); }
+    public void createArena(String id) {
+        if (!arenas.containsKey(id)) {
+            arenas.put(id, new Arena(plugin, id));
+            saveArenas();
         }
-        return true;
     }
 
     public Arena get(String id) { return arenas.get(id); }
-
     public Arena getByPlayer(UUID uuid) {
-        for (Arena a : arenas.values()) if (a.hasPlayer(uuid)) return a;
+        for (Arena a : arenas.values()) { if (a.hasPlayer(uuid)) return a; }
         return null;
     }
-
     public Collection<Arena> all() { return arenas.values(); }
     public int getArenaCount() { return arenas.size(); }
+    public void shutdownAll() { arenas.values().forEach(Arena::stopAllTasks); }
 
-    public void shutdownAll() {
-        arenas.values().forEach(a -> {
-            a.stopAllTasks();
-            a.getCircleManager().removeAllCircles();
-            a.getShulkerManager().clearAll();
-        });
-    }
-
-    private String locToStr(Location l) {
+    private String serializeLoc(Location l) {
         return l.getWorld().getName() + "," + l.getX() + "," + l.getY() + "," + l.getZ() + "," + l.getYaw() + "," + l.getPitch();
     }
 
-    private Location locFromStr(String s) {
-        if (s == null || s.isEmpty()) return null;
+    private Location deserializeLoc(String s) {
+        if (s == null) return null;
+        String[] p = s.split(",");
         try {
-            String[] p = s.split(",");
             World w = Bukkit.getWorld(p[0]);
             if (w == null) return null;
-            return new Location(w, Double.parseDouble(p[1]), Double.parseDouble(p[2]),
-                Double.parseDouble(p[3]), p.length > 4 ? Float.parseFloat(p[4]) : 0,
-                p.length > 5 ? Float.parseFloat(p[5]) : 0);
+            return new Location(w, Double.parseDouble(p[1]), Double.parseDouble(p[2]), Double.parseDouble(p[3]), 
+                p.length > 4 ? Float.parseFloat(p[4]) : 0, p.length > 5 ? Float.parseFloat(p[5]) : 0);
         } catch (Exception e) { return null; }
     }
 }

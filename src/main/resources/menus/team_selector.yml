@@ -1,0 +1,12 @@
+title: "&8&l✦ &bTakım/Renk Seç &8&l✦"
+size: 27
+open-sound: "BLOCK_NOTE_BLOCK_XYLOPHONE"
+item:
+  available:
+    lore:
+      - " "
+      - " &a▶ Seçmek için tıkla"
+  taken:
+    lore:
+      - " "
+      - " &c✖ Bu renk dolu!"

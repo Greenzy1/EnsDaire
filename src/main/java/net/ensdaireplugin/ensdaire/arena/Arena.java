@@ -207,7 +207,7 @@ public class Arena {
 
     private void applySpawnEffects(Player p) {
         p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, slowFallDuration, 0, false, true));
-        p.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, spawnProtection * 20, 4, false, false));
+        p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, spawnProtection * 20, 4, false, false));
     }
 
     private void nextRound() {
@@ -232,7 +232,7 @@ public class Arena {
         for (GamePlayer gp : players.values()) {
             Player p = Bukkit.getPlayer(gp.getUuid());
             if (p == null || !gp.isAlive()) continue;
-            if (currentModifier == ModifierType.LOW_GRAVITY) p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, 1200, 2));
+            if (currentModifier == ModifierType.LOW_GRAVITY) p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 1200, 2));
             if (currentModifier == ModifierType.SPEED) p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 1200, 2));
         }
 

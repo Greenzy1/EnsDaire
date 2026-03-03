@@ -1,0 +1,19 @@
+title: "&8&l✦ &bArena Seçimi &8&l✦"
+size: 27
+open-sound: "BLOCK_CHEST_OPEN"
+filler:
+  material: CYAN_STAINED_GLASS_PANE
+  name: " "
+status:
+  joinable:
+    material: LIME_CONCRETE
+    text: "&aGiriş Yapılabilir"
+  countdown:
+    material: YELLOW_CONCRETE
+    text: "&eGeri Sayım Başladı!"
+  running:
+    material: RED_CONCRETE
+    text: "&cOyun Devam Ediyor"
+  disabled:
+    material: BLACK_CONCRETE
+    text: "&0Bakımda"

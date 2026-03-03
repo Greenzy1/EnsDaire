@@ -125,7 +125,7 @@ public class CircleManager {
                         Color dustColor = getDustColor(color);
                         Particle.DustOptions dust = new Particle.DustOptions(dustColor, 1.0f);
                         try {
-                            center.getWorld().spawnParticle(Particle.DUST, pLoc, 1, 0, 0, 0, 0, dust);
+                            center.getWorld().spawnParticle(Particle.REDSTONE, pLoc, 1, 0, 0, 0, 0, dust);
                         } catch (Exception ignored) {}
                     }
                 }
