@@ -1,15 +1,19 @@
 name: EnsDaire
 version: '${project.version}'
-main: net.ensdaireplugin.ensdaire.EnsDaire
+main: net.ensis.ensdaire.EnsDaire
 api-version: '1.20'
 description: Daireden Son Çıkan Kazanır - EnsDaire Mini Game
-authors: [EnsDairePlugin]
+authors: [Ensis]
 
 commands:
   ensdaire:
     description: EnsDaire ana komutu
     aliases: [ed, daire]
     usage: /ensdaire <komut>
+  katil:
+    description: Bir arenaya katılır.
+  ayril:
+    description: Aktif arenadan ayrılır.
 
 permissions:
   ensdaire.play:

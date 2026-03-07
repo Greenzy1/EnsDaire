@@ -1,3 +1,9 @@
+settings:
+  language: tr_TR
+
+messages:
+  prefix: "&8[&bEnsDaire&8] &r"
+
 game:
   min-players: 2
   max-players: 16
@@ -8,76 +14,63 @@ game:
   slow-fall-duration: 60
   spawn-protection: 3
   win-fireworks: true
+  circle-check-interval: 2
 
-circle:
-  radius: 4
-  material: CONCRETE
-  check-interval: 4
-
-effects:
-  circle-particles: true
-  elimination-effect: true
+territory:
+  center-size: 7
+  safe-blocks:
+    - "IRON_BLOCK"
+    - "QUARTZ_BLOCK"
+    - "SHULKER_BOX"
+    - "WHITE_CONCRETE"
 
 shulker:
+  spawn-height-offset: 0
   items-per-shulker: 3
   loot:
     IRON_SWORD: 50
     GOLDEN_APPLE: 30
+    BOW: 40
+    ARROW: 80
     ENDER_PEARL: 20
-    KNOCKBACK_STICK: 10
-    BOW: 15
-    ARROW: 40
+    SHIELD: 30
 
 tokens:
   kill: 10
-  win: 50
-  survive-round: 5
   first-blood: 15
+  survive-round: 5
+  win: 50
   top3-bonus: 20
 
 points:
   kill: 5
-  win: 25
   first-blood: 10
+  survive-round: 2
+  win: 25
   top3-bonus: 10
-
-scoreboard:
-  enabled: true
-  update-interval: 10
-  title: "&b&l✦ ENSDAIRE ✦"
-  footer: "&7craftluna.net"
 
 actionbar:
   enabled: true
 
+effects:
+  elimination-effect: true
+
+bossbar:
+  color: BLUE
+  style: SOLID
+
+scoreboard:
+  enabled: true
+  title: "&b&l✦ EnsDaire ✦"
+  update-interval: 10
+  footer: "&7ensis.net"
+
 sounds:
   countdown: "BLOCK_NOTE_BLOCK_PLING"
   round-start: "ENTITY_EXPERIENCE_ORB_PICKUP"
-  elimination: "ENTITY_PLAYER_DEATH"
   win: "UI_TOAST_CHALLENGE_COMPLETE"
+  elimination: "ENTITY_PLAYER_DEATH"
   shulker-open: "ENTITY_SHULKER_OPEN"
-
-messages:
-  prefix: "&8[&bEnsDaire&8] &r"
-  join: "&7{current}/{max} &eoyuncu katıldı!"
-  leave: "&cBir oyuncu ayrıldı."
-  not-enough-players: "&cBaşlamak için en az {min} oyuncu gerekiyor!"
-  game-start: "&aOyun başladı! Başarılar."
-  round-start: "&eRound {round} başladı!"
-  round-end: "&7Round {round} bitti!"
-  eliminated-circle: "&cAlan dışında kaldığın için elendin!"
-  eliminated-killed: "&c{killer} tarafından elendin!"
-  spectator: "&7Artık izleyici modundasın."
-  win: "&6{player} &eoyunu kazandı!"
-  first-blood: "&cİLK KAN! &f{player} &7tarafından döküldü!"
-  token-earned: "&a+{amount} &7jeton kazandın! &8(&e{total}&8)"
-  rank-up: "&6TEBRİKLER! &7Yeni rütben: &f{rank}"
-  no-permission: "&cBu komut için yetkiniz yok!"
-  already-in-game: "&cZaten bir oyundasın!"
-  arena-not-found: "&cArena bulunamadı: {arena}"
-  game-full: "&cArena dolu! {current}/{max}"
-  game-not-joinable: "&cBu oyun şu an katılım için uygun değil."
-  player-only: "&cBu komutu sadece oyuncular kullanabilir!"
 
 ranks:
   - name: "Çaylak"

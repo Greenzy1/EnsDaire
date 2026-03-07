@@ -1,0 +1,20 @@
+title: "§8§l✦ §6İstatistiklerin §8§l✦"
+size: 27
+items:
+  stats:
+    material: PLAYER_HEAD
+    slot: 13
+    name: "§e§lProfilin: §b{player}"
+    lore:
+      - ""
+      - " §fPuan: §e{points}"
+      - " §fJeton: §e{tokens}"
+      - " §fRütbe: §7{rank}"
+      - ""
+      - " §fGalibiyet: §a{wins}"
+      - " §fÖldürme: §c{kills}"
+      - " §fÖlüm: §4{deaths}"
+      - " §fK/D: §7{kd}"
+      - ""
+      - " §fOynanan Oyun: §7{games}"
+      - " §fKazanma Oranı: §7%{winrate}"
