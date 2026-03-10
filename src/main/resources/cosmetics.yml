@@ -1,428 +1,345 @@
-# Kozmetik Ayarları
-# Her kozmetik öğesi izinleri, fiyatı ve görünümü ile buradan yapılandırılabilir
+# EnsDaire Devasa Kozmetik Paketi (v2.0 - 300+ Items)
+# Her kategori eşit olarak 75+ öğe içerecek şekilde dağıtılmıştır.
+
 categories:
   TRAIL:
     material: "BLAZE_POWDER"
-    name: "&bYürüme İzleri"
+    name: "&b&lYÜRÜME İZLERİ"
     lore:
       - "&7Yürürken arkanızda"
-      - "&7çıkacak partiküller."
+      - "&7çıkacak efsanevi partiküller."
   KILL:
     material: "TNT"
-    name: "&cÖldürme Efektleri"
+    name: "&c&lÖLDÜRME EFEKTLERİ"
     lore:
-      - "&7Birini öldürdüğünüzde"
-      - "&7çıkacak partiküller."
+      - "&7Rakiplerinizi elediğinizde"
+      - "&7dünyaya bırakacağınız iz."
   PROJECTILE:
     material: "ARROW"
-    name: "&eOk Efektleri"
+    name: "&e&lOK EFEKTLERİ"
     lore:
-      - "&7Ok attığınızda"
-      - "&7arkasında kalan iz."
+      - "&7Oklarınızın arkasında bıraktığı"
+      - "&7büyülü ve teknolojik izler."
   WIN:
     material: "NETHER_STAR"
-    name: "&6Kazanma Dansları"
+    name: "&6&lKAZANMA DANSLARI"
     lore:
-      - "&7Oyunu kazandığınızda"
-      - "&7çıkacak görkemli efekt."
+      - "&7Zafer anında tüm sunucunun"
+      - "&7göreceği görkemli şovlar."
 
 items:
-  # --- TRAILS (Yürüme İzleri) ---
-  TRAIL_FLAME:
-    category: "TRAIL"
-    material: "BLAZE_POWDER"
-    price: 2000
-  TRAIL_HEART:
-    category: "TRAIL"
-    material: "POPPY"
-    price: 3000
-  TRAIL_SOUL:
-    category: "TRAIL"
-    material: "SOUL_LANTERN"
-    price: 4000
-  TRAIL_CRIT:
-    category: "TRAIL"
-    material: "IRON_SWORD"
-    price: 1500
-  TRAIL_GLOW:
-    category: "TRAIL"
-    material: "GLOWSTONE_DUST"
-    price: 2500
-  TRAIL_VILLAGER:
-    category: "TRAIL"
-    material: "EMERALD"
-    price: 3200
-  TRAIL_ENCHANT:
-    category: "TRAIL"
-    material: "ENCHANTING_TABLE"
-    price: 4500
-  TRAIL_CLOUD:
-    category: "TRAIL"
-    material: "FEATHER"
-    price: 2100
-  TRAIL_LAVA:
-    category: "TRAIL"
-    material: "LAVA_BUCKET"
-    price: 5500
-  TRAIL_PORTAL:
-    category: "TRAIL"
-    material: "OBSIDIAN"
-    price: 4200
-  TRAIL_TOTEM:
-    category: "TRAIL"
-    material: "TOTEM_OF_UNDYING"
-    price: 8000
-  TRAIL_NOTES:
-    category: "TRAIL"
-    material: "NOTE_BLOCK"
-    price: 3800
-  TRAIL_DRAGON:
-    category: "TRAIL"
-    material: "DRAGON_BREATH"
-    price: 9000
-  TRAIL_RAINBOW:
-    category: "TRAIL"
-    material: "PINK_DYE"
-    price: 6500
-  TRAIL_VOID:
-    category: "TRAIL"
-    material: "END_STONE"
-    price: 7200
-  TRAIL_HONEY:
-    category: "TRAIL"
-    material: "HONEY_BOTTLE"
-    price: 3100
-  TRAIL_SNOW:
-    category: "TRAIL"
-    material: "SNOWBALL"
-    price: 2400
-  TRAIL_SQUID:
-    category: "TRAIL"
-    material: "INK_SAC"
-    price: 2900
-  TRAIL_GOLD:
-    category: "TRAIL"
-    material: "GOLD_INGOT"
-    price: 5200
-  TRAIL_DIAMOND:
-    category: "TRAIL"
-    material: "DIAMOND"
-    price: 8500
-  TRAIL_EMERALD_SPARKLE:
-    category: "TRAIL"
-    material: "EMERALD_BLOCK"
-    price: 9500
-  TRAIL_REDSTONE_DUST:
-    category: "TRAIL"
-    material: "REDSTONE"
-    price: 1800
-  TRAIL_MYCELIUM:
-    category: "TRAIL"
-    material: "MYCELIUM"
-    price: 3300
-  TRAIL_NAUTILUS:
-    category: "TRAIL"
-    material: "NAUTILUS_SHELL"
-    price: 6700
-  TRAIL_PHANTOM:
-    category: "TRAIL"
-    material: "PHANTOM_MEMBRANE"
-    price: 5800
+  # ==========================================
+  # --- TRAILS (75+ ITEMS) ---
+  # ==========================================
+  TRAIL_FLAME: { category: "TRAIL", material: "BLAZE_POWDER", price: 2000 }
+  TRAIL_HEART: { category: "TRAIL", material: "POPPY", price: 3000 }
+  TRAIL_SOUL: { category: "TRAIL", material: "SOUL_LANTERN", price: 4000 }
+  TRAIL_CRIT: { category: "TRAIL", material: "IRON_SWORD", price: 1500 }
+  TRAIL_GLOW: { category: "TRAIL", material: "GLOWSTONE_DUST", price: 2500 }
+  TRAIL_VILLAGER: { category: "TRAIL", material: "EMERALD", price: 3200 }
+  TRAIL_ENCHANT: { category: "TRAIL", material: "ENCHANTING_TABLE", price: 4500 }
+  TRAIL_CLOUD: { category: "TRAIL", material: "FEATHER", price: 2100 }
+  TRAIL_LAVA: { category: "TRAIL", material: "LAVA_BUCKET", price: 5500 }
+  TRAIL_PORTAL: { category: "TRAIL", material: "OBSIDIAN", price: 4200 }
+  TRAIL_TOTEM: { category: "TRAIL", material: "TOTEM_OF_UNDYING", price: 8000 }
+  TRAIL_NOTES: { category: "TRAIL", material: "NOTE_BLOCK", price: 3800 }
+  TRAIL_DRAGON: { category: "TRAIL", material: "DRAGON_BREATH", price: 9000 }
+  TRAIL_RAINBOW: { category: "TRAIL", material: "PINK_DYE", price: 6500 }
+  TRAIL_VOID: { category: "TRAIL", material: "END_STONE", price: 7200 }
+  TRAIL_HONEY: { category: "TRAIL", material: "HONEY_BOTTLE", price: 3100 }
+  TRAIL_SNOW: { category: "TRAIL", material: "SNOWBALL", price: 2400 }
+  TRAIL_SQUID: { category: "TRAIL", material: "INK_SAC", price: 2900 }
+  TRAIL_GOLD: { category: "TRAIL", material: "GOLD_INGOT", price: 5200 }
+  TRAIL_DIAMOND: { category: "TRAIL", material: "DIAMOND", price: 8500 }
+  TRAIL_EMERALD_SPARKLE: { category: "TRAIL", material: "EMERALD_BLOCK", price: 9500 }
+  TRAIL_REDSTONE_DUST: { category: "TRAIL", material: "REDSTONE", price: 1800 }
+  TRAIL_MYCELIUM: { category: "TRAIL", material: "MYCELIUM", price: 3300 }
+  TRAIL_NAUTILUS: { category: "TRAIL", material: "NAUTILUS_SHELL", price: 6700 }
+  TRAIL_PHANTOM: { category: "TRAIL", material: "PHANTOM_MEMBRANE", price: 5800 }
+  TRAIL_GLOW_LICHEN: { category: "TRAIL", material: "GLOW_LICHEN", price: 2700 }
+  TRAIL_SCULK: { category: "TRAIL", material: "SCULK", price: 8800 }
+  TRAIL_AMETHYST: { category: "TRAIL", material: "AMETHYST_CLUSTER", price: 7500 }
+  TRAIL_COPPER_OXIDIZED: { category: "TRAIL", material: "OXIDIZED_COPPER", price: 3600 }
+  TRAIL_SPORE: { category: "TRAIL", material: "SPORE_BLOSSOM", price: 4900 }
+  TRAIL_DRIPSTONE: { category: "TRAIL", material: "POINTED_DRIPSTONE", price: 2300 }
+  TRAIL_MOSS: { category: "TRAIL", material: "MOSS_BLOCK", price: 3100 }
+  TRAIL_AZALEA: { category: "TRAIL", material: "FLOWERING_AZALEA", price: 3400 }
+  TRAIL_BAMBOO: { category: "TRAIL", material: "BAMBOO", price: 1900 }
+  TRAIL_BERRY: { category: "TRAIL", material: "SWEET_BERRIES", price: 2200 }
+  TRAIL_CAMPFIRE: { category: "TRAIL", material: "CAMPFIRE", price: 4100 }
+  TRAIL_CANDLE: { category: "TRAIL", material: "CANDLE", price: 2800 }
+  TRAIL_CRYING_OBSIDIAN: { category: "TRAIL", material: "CRYING_OBSIDIAN", price: 9200 }
+  TRAIL_GILDED_BLACKSTONE: { category: "TRAIL", material: "GILDED_BLACKSTONE", price: 7800 }
+  TRAIL_MAGMA: { category: "TRAIL", material: "MAGMA_BLOCK", price: 5600 }
+  TRAIL_WARPED: { category: "TRAIL", material: "WARPED_FUNGUS", price: 4400 }
+  TRAIL_CRIMSON: { category: "TRAIL", material: "CRIMSON_FUNGUS", price: 4400 }
+  TRAIL_NETHER_WORT: { category: "TRAIL", material: "NETHER_WART", price: 3700 }
+  TRAIL_QUARTZ: { category: "TRAIL", material: "QUARTZ", price: 3900 }
+  TRAIL_PRISMARINE: { category: "TRAIL", material: "PRISMARINE_SHARD", price: 6100 }
+  TRAIL_SEA_LANTERN: { category: "TRAIL", material: "SEA_LANTERN", price: 7300 }
+  TRAIL_CORAL_FAN: { category: "TRAIL", material: "TUBE_CORAL_FAN", price: 3200 }
+  TRAIL_SEA_PICKLE: { category: "TRAIL", material: "SEA_PICKLE", price: 2900 }
+  TRAIL_TURTLE_EGG: { category: "TRAIL", material: "TURTLE_EGG", price: 8500 }
+  TRAIL_ICE: { category: "TRAIL", material: "BLUE_ICE", price: 6400 }
+  TRAIL_DRAGON_EGG_SPARK: { category: "TRAIL", material: "DRAGON_EGG", price: 50000 }
+  TRAIL_WITHER_ROSE: { category: "TRAIL", material: "WITHER_ROSE", price: 15000 }
+  TRAIL_BEE_PARTICLE: { category: "TRAIL", material: "HONEYCOMB", price: 3500 }
+  TRAIL_SLIME_DRIP: { category: "TRAIL", material: "SLIME_BLOCK", price: 4700 }
+  TRAIL_CONDUIT_EYE: { category: "TRAIL", material: "CONDUIT", price: 25000 }
+  TRAIL_ENDER_EYE_IZI: { category: "TRAIL", material: "ENDER_EYE", price: 12000 }
+  TRAIL_RABBIT_FOOT: { category: "TRAIL", material: "RABBIT_FOOT", price: 5800 }
+  TRAIL_PUMPKIN_SPICE: { category: "TRAIL", material: "JACK_O_LANTERN", price: 3300 }
+  TRAIL_GHAST_TEAR: { category: "TRAIL", material: "GHAST_TEAR", price: 8100 }
+  TRAIL_BREWING: { category: "TRAIL", material: "BREWING_STAND", price: 6900 }
+  TRAIL_EXPERIENCE: { category: "TRAIL", material: "EXPERIENCE_BOTTLE", price: 10000 }
+  TRAIL_LEATHER_BOOTS: { category: "TRAIL", material: "LEATHER_BOOTS", price: 1200 }
+  TRAIL_IRON_BOOTS: { category: "TRAIL", material: "IRON_BOOTS", price: 2500 }
+  TRAIL_GOLD_BOOTS: { category: "TRAIL", material: "GOLDEN_BOOTS", price: 4500 }
+  TRAIL_DIAMOND_BOOTS: { category: "TRAIL", material: "DIAMOND_BOOTS", price: 9000 }
+  TRAIL_NETHERITE_BOOTS: { category: "TRAIL", material: "NETHERITE_BOOTS", price: 20000 }
+  TRAIL_WHEAT: { category: "TRAIL", material: "WHEAT", price: 1500 }
+  TRAIL_CARROT: { category: "TRAIL", material: "CARROT", price: 1600 }
+  TRAIL_POTATO: { category: "TRAIL", material: "POTATO", price: 1600 }
+  TRAIL_APPLE: { category: "TRAIL", material: "APPLE", price: 2100 }
+  TRAIL_CAKE: { category: "TRAIL", material: "CAKE", price: 5400 }
+  TRAIL_CHORUS: { category: "TRAIL", material: "CHORUS_FLOWER", price: 7700 }
+  TRAIL_SHULKER: { category: "TRAIL", material: "SHULKER_SHELL", price: 8300 }
+  TRAIL_ELYTRA: { category: "TRAIL", material: "ELYTRA", price: 35000 }
+  TRAIL_TRIDENT: { category: "TRAIL", material: "TRIDENT", price: 28000 }
 
-  # --- KILL EFFECTS (Öldürme Efektleri) ---
-  KILL_EXPLOSION:
-    category: "KILL"
-    material: "TNT"
-    price: 5000
-  KILL_LIGHTNING:
-    category: "KILL"
-    material: "LIGHTNING_ROD"
-    price: 6000
-  KILL_BLOOD:
-    category: "KILL"
-    material: "REDSTONE"
-    price: 3500
-  KILL_GHOST:
-    category: "KILL"
-    material: "GHAST_TEAR"
-    price: 4500
-  KILL_SQUID_INK:
-    category: "KILL"
-    material: "GLOW_INK_SAC"
-    price: 4200
-  KILL_HEART_BREAK:
-    category: "KILL"
-    material: "FERMENTED_SPIDER_EYE"
-    price: 5500
-  KILL_ANVIL:
-    category: "KILL"
-    material: "ANVIL"
-    price: 7000
-  KILL_FIREWORK:
-    category: "KILL"
-    material: "FIREWORK_ROCKET"
-    price: 4800
-  KILL_WITHER:
-    category: "KILL"
-    material: "WITHER_SKELETON_SKULL"
-    price: 9500
-  KILL_DRAGON_BREATH:
-    category: "KILL"
-    material: "DRAGON_HEAD"
-    price: 12000
-  KILL_ENDER_PEARL:
-    category: "KILL"
-    material: "ENDER_PEARL"
-    price: 3900
-  KILL_COOKIE:
-    category: "KILL"
-    material: "COOKIE"
-    price: 2500
-  KILL_CHICKEN:
-    category: "KILL"
-    material: "EGG"
-    price: 3100
-  KILL_PUMPKIN:
-    category: "KILL"
-    material: "CARVED_PUMPKIN"
-    price: 4400
-  KILL_ZOMBIE:
-    category: "KILL"
-    material: "ZOMBIE_HEAD"
-    price: 5200
-  KILL_GOLD_RAIN:
-    category: "KILL"
-    material: "GOLD_NUGGET"
-    price: 6800
-  KILL_SLIME:
-    category: "KILL"
-    material: "SLIME_BALL"
-    price: 4100
-  KILL_SNOWBALL:
-    category: "KILL"
-    material: "SNOW_BLOCK"
-    price: 2200
-  KILL_TOTEM:
-    category: "KILL"
-    material: "TOTEM_OF_UNDYING"
-    price: 15000
-  KILL_BEE:
-    category: "KILL"
-    material: "BEE_NEST"
-    price: 5900
-  KILL_CORAL:
-    category: "KILL"
-    material: "BRAIN_CORAL"
-    price: 3800
-  KILL_VORTEX:
-    category: "KILL"
-    material: "ENDER_EYE"
-    price: 8800
-  KILL_GLOW:
-    category: "KILL"
-    material: "GLOW_BERRIES"
-    price: 4600
-  KILL_SCULK:
-    category: "KILL"
-    material: "SCULK_SENSOR"
-    price: 11000
+  # ==========================================
+  # --- KILL EFFECTS (75+ ITEMS) ---
+  # ==========================================
+  KILL_EXPLOSION: { category: "KILL", material: "TNT", price: 5000 }
+  KILL_LIGHTNING: { category: "KILL", material: "LIGHTNING_ROD", price: 6000 }
+  KILL_BLOOD: { category: "KILL", material: "REDSTONE", price: 3500 }
+  KILL_GHOST: { category: "KILL", material: "GHAST_TEAR", price: 4500 }
+  KILL_SQUID_INK: { category: "KILL", material: "GLOW_INK_SAC", price: 4200 }
+  KILL_HEART_BREAK: { category: "KILL", material: "FERMENTED_SPIDER_EYE", price: 5500 }
+  KILL_ANVIL: { category: "KILL", material: "ANVIL", price: 7000 }
+  KILL_FIREWORK: { category: "KILL", material: "FIREWORK_ROCKET", price: 4800 }
+  KILL_WITHER: { category: "KILL", material: "WITHER_SKELETON_SKULL", price: 9500 }
+  KILL_DRAGON_BREATH: { category: "KILL", material: "DRAGON_HEAD", price: 12000 }
+  KILL_ENDER_PEARL: { category: "KILL", material: "ENDER_PEARL", price: 3900 }
+  KILL_COOKIE: { category: "KILL", material: "COOKIE", price: 2500 }
+  KILL_CHICKEN: { category: "KILL", material: "EGG", price: 3100 }
+  KILL_PUMPKIN: { category: "KILL", material: "CARVED_PUMPKIN", price: 4400 }
+  KILL_ZOMBIE: { category: "KILL", material: "ZOMBIE_HEAD", price: 5200 }
+  KILL_GOLD_RAIN: { category: "KILL", material: "GOLD_NUGGET", price: 6800 }
+  KILL_SLIME: { category: "KILL", material: "SLIME_BALL", price: 4100 }
+  KILL_SNOWBALL: { category: "KILL", material: "SNOW_BLOCK", price: 2200 }
+  KILL_TOTEM: { category: "KILL", material: "TOTEM_OF_UNDYING", price: 15000 }
+  KILL_BEE: { category: "KILL", material: "BEE_NEST", price: 5900 }
+  KILL_CORAL: { category: "KILL", material: "BRAIN_CORAL", price: 3800 }
+  KILL_VORTEX: { category: "KILL", material: "ENDER_EYE", price: 8800 }
+  KILL_GLOW: { category: "KILL", material: "GLOW_BERRIES", price: 4600 }
+  KILL_SCULK: { category: "KILL", material: "SCULK_SENSOR", price: 11000 }
+  KILL_SONIC_BOOM: { category: "KILL", material: "ECHO_SHARD", price: 25000 }
+  KILL_WARDEN_ROAR: { category: "KILL", material: "SCULK_SHRIEKER", price: 18000 }
+  KILL_CREEPER: { category: "KILL", material: "CREEPER_HEAD", price: 9000 }
+  KILL_SKELETON: { category: "KILL", material: "SKELETON_SKULL", price: 4500 }
+  KILL_TNT_MINE: { category: "KILL", material: "TNT_MINECART", price: 13000 }
+  KILL_LAVA_SPLASH: { category: "KILL", material: "LAVA_BUCKET", price: 7200 }
+  KILL_WATER_DROWN: { category: "KILL", material: "WATER_BUCKET", price: 6500 }
+  KILL_SAND_BURIAL: { category: "KILL", material: "SAND", price: 3400 }
+  KILL_GRAVE: { category: "KILL", material: "COBBLESTONE", price: 2800 }
+  KILL_METEOR_IMPACT: { category: "KILL", material: "MAGMA_BLOCK", price: 14000 }
+  KILL_BAT_SWARM: { category: "KILL", material: "BAT_SPAWN_EGG", price: 10000 }
+  KILL_PARROT_FEATHER: { category: "KILL", material: "FEATHER", price: 3100 }
+  KILL_CAT_MEOW: { category: "KILL", material: "STRING", price: 2900 }
+  KILL_WOLF_HOWL: { category: "KILL", material: "BONE", price: 4300 }
+  KILL_VILLAGER_ANGRY: { category: "KILL", material: "EMERALD", price: 5500 }
+  KILL_PILLAGER_RAID: { category: "KILL", material: "WHITE_BANNER", price: 8200 }
+  KILL_EVOKER_FANGS: { category: "KILL", material: "TOTEM_OF_UNDYING", price: 20000 }
+  KILL_VEX_SPIRIT: { category: "KILL", material: "IRON_SWORD", price: 7400 }
+  KILL_SHULKER_BOX: { category: "KILL", material: "SHULKER_SHELL", price: 9900 }
+  KILL_CHORUS_TP: { category: "KILL", material: "CHORUS_FRUIT", price: 6100 }
+  KILL_END_CRYSTAL: { category: "KILL", material: "END_CRYSTAL", price: 35000 }
+  KILL_OBSIDIAN_CAGE: { category: "KILL", material: "OBSIDIAN", price: 12000 }
+  KILL_BEDROCK_CRUSH: { category: "KILL", material: "BEDROCK", price: 100000 }
+  KILL_NETHER_STAR: { category: "KILL", material: "NETHER_STAR", price: 50000 }
+  KILL_WITHER_BLAST: { category: "KILL", material: "WITHER_SKELETON_SKULL", price: 28000 }
+  KILL_PIG_OINK: { category: "KILL", material: "PORKCHOP", price: 1800 }
+  KILL_COW_MOO: { category: "KILL", material: "BEEF", price: 1800 }
+  KILL_SHEEP_BAA: { category: "KILL", material: "WHITE_WOOL", price: 1800 }
+  KILL_SPIDER_WEB: { category: "KILL", material: "COBWEB", price: 4700 }
+  KILL_SLIME_SPLPLAT: { category: "KILL", material: "SLIME_BLOCK", price: 5300 }
+  KILL_MAGMA_CUBE: { category: "KILL", material: "MAGMA_CREAM", price: 5300 }
+  KILL_BLAZE_FIRE: { category: "KILL", material: "BLAZE_ROD", price: 7700 }
+  KILL_GHAST_BALL: { category: "KILL", material: "FIRE_CHARGE", price: 9100 }
+  KILL_ELDER_GUARDIAN: { category: "KILL", material: "PRISMARINE_SHARD", price: 22000 }
+  KILL_DOLPHIN_LEAP: { category: "KILL", material: "COD", price: 6800 }
+  KILL_PANDA_SNEEZE: { category: "KILL", material: "BAMBOO", price: 4900 }
+  KILL_FOX_JUMP: { category: "KILL", material: "SWEET_BERRIES", price: 4200 }
+  KILL_AMETHYST_SHATTER: { category: "KILL", material: "AMETHYST_SHARD", price: 8600 }
+  KILL_COPPER_LIGHTNING: { category: "KILL", material: "COPPER_BLOCK", price: 11000 }
+  KILL_IRON_GOLEM: { category: "KILL", material: "IRON_BLOCK", price: 15000 }
+  KILL_SNOW_GOLEM: { category: "KILL", material: "CARROT_ON_A_STICK", price: 3500 }
+  KILL_WITCH_POTION: { category: "KILL", material: "GLASS_BOTTLE", price: 6300 }
+  KILL_TRADER_LLAMA: { category: "KILL", material: "LEAD", price: 4100 }
+  KILL_RAVAGER_THUMP: { category: "KILL", material: "SADDLE", price: 14000 }
+  KILL_HOGLIN_TOSS: { category: "KILL", material: "PORKCHOP", price: 7800 }
+  KILL_STRIDER_WALK: { category: "KILL", material: "WARPED_FUNGUS_ON_A_STICK", price: 5200 }
+  KILL_AXOLOTL_CUTE: { category: "KILL", material: "AXOLOTL_BUCKET", price: 9000 }
+  KILL_GLOW_SQUID: { category: "KILL", material: "GLOW_INK_SAC", price: 7600 }
+  KILL_GOAT_RAM: { category: "KILL", material: "GOAT_HORN", price: 8400 }
+  KILL_FROG_LEAP: { category: "KILL", material: "FROG_SPAWN_EGG", price: 5700 }
+  KILL_ALLAY_NOTE: { category: "KILL", material: "ALLAY_SPAWN_EGG", price: 12000 }
 
-  # --- PROJECTILES (Ok Efektleri) ---
-  ARROW_SMOKE:
-    category: "PROJECTILE"
-    material: "COAL"
-    price: 2000
-  ARROW_SPARK:
-    category: "PROJECTILE"
-    material: "COPPER_INGOT"
-    price: 3000
-  ARROW_MAGIC:
-    category: "PROJECTILE"
-    material: "DRAGON_BREATH"
-    price: 4000
-  ARROW_FIRE:
-    category: "PROJECTILE"
-    material: "FLINT_AND_STEEL"
-    price: 3500
-  ARROW_WATER:
-    category: "PROJECTILE"
-    material: "WATER_BUCKET"
-    price: 3200
-  ARROW_LAVA:
-    category: "PROJECTILE"
-    material: "LAVA_BUCKET"
-    price: 5500
-  ARROW_GREEN:
-    category: "PROJECTILE"
-    material: "CACTUS"
-    price: 2800
-  ARROW_RAINBOW:
-    category: "PROJECTILE"
-    material: "GLOW_INK_SAC"
-    price: 7000
-  ARROW_HEART:
-    category: "PROJECTILE"
-    material: "RED_TULIP"
-    price: 4500
-  ARROW_VOID:
-    category: "PROJECTILE"
-    material: "CHORUS_FRUIT"
-    price: 6200
-  ARROW_VILLAGER:
-    category: "PROJECTILE"
-    material: "EMERALD"
-    price: 5100
-  ARROW_MUSIC:
-    category: "PROJECTILE"
-    material: "JUKEBOX"
-    price: 4900
-  ARROW_LIGHTNING:
-    category: "PROJECTILE"
-    material: "LIGHTNING_ROD"
-    price: 9000
-  ARROW_GHOST:
-    category: "PROJECTILE"
-    material: "WHITE_DYE"
-    price: 3300
-  ARROW_POISON:
-    category: "PROJECTILE"
-    material: "SPIDER_EYE"
-    price: 4100
-  ARROW_BUBBLE:
-    category: "PROJECTILE"
-    material: "KELP"
-    price: 2700
-  ARROW_SAND:
-    category: "PROJECTILE"
-    material: "SAND"
-    price: 2100
-  ARROW_AMETHYST:
-    category: "PROJECTILE"
-    material: "AMETHYST_SHARD"
-    price: 8200
-  ARROW_BLOOD:
-    category: "PROJECTILE"
-    material: "REDSTONE_BLOCK"
-    price: 5800
-  ARROW_GLOWSTONE:
-    category: "PROJECTILE"
-    material: "GLOWSTONE"
-    price: 4300
-  ARROW_COPPER:
-    category: "PROJECTILE"
-    material: "RAW_COPPER"
-    price: 2900
-  ARROW_SNOW:
-    category: "PROJECTILE"
-    material: "SNOWBALL"
-    price: 1900
-  ARROW_FLAME_STRIKE:
-    category: "PROJECTILE"
-    material: "FIRE_CHARGE"
-    price: 6600
-  ARROW_WITCH:
-    category: "PROJECTILE"
-    material: "GLASS_BOTTLE"
-    price: 5400
+  # ==========================================
+  # --- PROJECTILES (75+ ITEMS) ---
+  # ==========================================
+  ARROW_SMOKE: { category: "PROJECTILE", material: "COAL", price: 2000 }
+  ARROW_SPARK: { category: "PROJECTILE", material: "COPPER_INGOT", price: 3000 }
+  ARROW_MAGIC: { category: "PROJECTILE", material: "DRAGON_BREATH", price: 4000 }
+  ARROW_FIRE: { category: "PROJECTILE", material: "FLINT_AND_STEEL", price: 3500 }
+  ARROW_WATER: { category: "PROJECTILE", material: "WATER_BUCKET", price: 3200 }
+  ARROW_LAVA: { category: "PROJECTILE", material: "LAVA_BUCKET", price: 5500 }
+  ARROW_GREEN: { category: "PROJECTILE", material: "CACTUS", price: 2800 }
+  ARROW_RAINBOW: { category: "PROJECTILE", material: "GLOW_INK_SAC", price: 7000 }
+  ARROW_HEART: { category: "PROJECTILE", material: "RED_TULIP", price: 4500 }
+  ARROW_VOID: { category: "PROJECTILE", material: "CHORUS_FRUIT", price: 6200 }
+  ARROW_VILLAGER: { category: "PROJECTILE", material: "EMERALD", price: 5100 }
+  ARROW_MUSIC: { category: "PROJECTILE", material: "JUKEBOX", price: 4900 }
+  ARROW_LIGHTNING: { category: "PROJECTILE", material: "LIGHTNING_ROD", price: 9000 }
+  ARROW_GHOST: { category: "PROJECTILE", material: "WHITE_DYE", price: 3300 }
+  ARROW_POISON: { category: "PROJECTILE", material: "SPIDER_EYE", price: 4100 }
+  ARROW_BUBBLE: { category: "PROJECTILE", material: "KELP", price: 2700 }
+  ARROW_SAND: { category: "PROJECTILE", material: "SAND", price: 2100 }
+  ARROW_AMETHYST: { category: "PROJECTILE", material: "AMETHYST_SHARD", price: 8200 }
+  ARROW_BLOOD: { category: "PROJECTILE", material: "REDSTONE_BLOCK", price: 5800 }
+  ARROW_GLOWSTONE: { category: "PROJECTILE", material: "GLOWSTONE", price: 4300 }
+  ARROW_COPPER: { category: "PROJECTILE", material: "RAW_COPPER", price: 2900 }
+  ARROW_SNOW: { category: "PROJECTILE", material: "SNOWBALL", price: 1900 }
+  ARROW_FLAME_STRIKE: { category: "PROJECTILE", material: "FIRE_CHARGE", price: 6600 }
+  ARROW_WITCH: { category: "PROJECTILE", material: "GLASS_BOTTLE", price: 5400 }
+  ARROW_ECHO: { category: "PROJECTILE", material: "ECHO_SHARD", price: 15000 }
+  ARROW_SOUL: { category: "PROJECTILE", material: "SOUL_SOIL", price: 4700 }
+  ARROW_NETHER: { category: "PROJECTILE", material: "NETHERRACK", price: 3100 }
+  ARROW_END: { category: "PROJECTILE", material: "END_STONE", price: 5200 }
+  ARROW_MYCELIUM: { category: "PROJECTILE", material: "MYCELIUM", price: 3900 }
+  ARROW_CRIMSON: { category: "PROJECTILE", material: "CRIMSON_NYLIUM", price: 4600 }
+  ARROW_WARPED: { category: "PROJECTILE", material: "WARPED_NYLIUM", price: 4600 }
+  ARROW_BONE: { category: "PROJECTILE", material: "BONE_MEAL", price: 2200 }
+  ARROW_INK: { category: "PROJECTILE", material: "INK_SAC", price: 2600 }
+  ARROW_MILK: { category: "PROJECTILE", material: "MILK_BUCKET", price: 4800 }
+  ARROW_HONEY: { category: "PROJECTILE", material: "HONEY_BLOCK", price: 5500 }
+  ARROW_SLIME: { category: "PROJECTILE", material: "SLIME_BALL", price: 4100 }
+  ARROW_MAGMA: { category: "PROJECTILE", material: "MAGMA_CREAM", price: 5300 }
+  ARROW_PRISMARINE: { category: "PROJECTILE", material: "PRISMARINE_CRYSTALS", price: 6800 }
+  ARROW_CONDUIT: { category: "PROJECTILE", material: "HEART_OF_THE_SEA", price: 28000 }
+  ARROW_TOTEM: { category: "PROJECTILE", material: "TOTEM_OF_UNDYING", price: 25000 }
+  ARROW_EXPERIENCE: { category: "PROJECTILE", material: "EXPERIENCE_BOTTLE", price: 12000 }
+  ARROW_DIAMOND: { category: "PROJECTILE", material: "DIAMOND", price: 18000 }
+  ARROW_GOLD: { category: "PROJECTILE", material: "GOLD_INGOT", price: 9000 }
+  ARROW_IRON: { category: "PROJECTILE", material: "IRON_INGOT", price: 5000 }
+  ARROW_EMERALD: { category: "PROJECTILE", material: "EMERALD", price: 11000 }
+  ARROW_NETHERITE: { category: "PROJECTILE", material: "NETHERITE_INGOT", price: 45000 }
+  ARROW_OBSIDIAN: { category: "PROJECTILE", material: "OBSIDIAN", price: 8500 }
+  ARROW_BEDROCK: { category: "PROJECTILE", material: "BEDROCK", price: 150000 }
+  ARROW_DRAGON: { category: "PROJECTILE", material: "DRAGON_EGG", price: 75000 }
+  ARROW_WITHER: { category: "PROJECTILE", material: "WITHER_SKELETON_SKULL", price: 35000 }
+  ARROW_SCULK: { category: "PROJECTILE", material: "SCULK", price: 9200 }
+  ARROW_SHRIEKER: { category: "PROJECTILE", material: "SCULK_SHRIEKER", price: 14000 }
+  ARROW_CAT: { category: "PROJECTILE", material: "STRING", price: 3400 }
+  ARROW_DOG: { category: "PROJECTILE", material: "BONE", price: 3400 }
+  ARROW_PIG: { category: "PROJECTILE", material: "PORKCHOP", price: 2800 }
+  ARROW_SHEEP: { category: "PROJECTILE", material: "WHITE_WOOL", price: 2800 }
+  ARROW_COW: { category: "PROJECTILE", material: "BEEF", price: 2800 }
+  ARROW_CHICKEN: { category: "PROJECTILE", material: "FEATHER", price: 2800 }
+  ARROW_BEE: { category: "PROJECTILE", material: "HONEYCOMB", price: 4300 }
+  ARROW_SPIDER: { category: "PROJECTILE", material: "SPIDER_EYE", price: 3700 }
+  ARROW_CREEPER: { category: "PROJECTILE", material: "GUNPOWDER", price: 6200 }
+  ARROW_SKELETON: { category: "PROJECTILE", material: "ARROW", price: 2100 }
+  ARROW_ZOMBIE: { category: "PROJECTILE", material: "ROTTEN_FLESH", price: 2100 }
+  ARROW_ENDerman: { category: "PROJECTILE", material: "ENDER_PEARL", price: 8300 }
+  ARROW_BLAZE: { category: "PROJECTILE", material: "BLAZE_POWDER", price: 7100 }
+  ARROW_GHAST: { category: "PROJECTILE", material: "GHAST_TEAR", price: 9800 }
+  ARROW_SLIME_JUMP: { category: "PROJECTILE", material: "SLIME_BLOCK", price: 5900 }
+  ARROW_MAGMA_JUMP: { category: "PROJECTILE", material: "MAGMA_BLOCK", price: 5900 }
+  ARROW_ICE: { category: "PROJECTILE", material: "PACKED_ICE", price: 4200 }
+  ARROW_SNOW_JUMP: { category: "PROJECTILE", material: "SNOW_BLOCK", price: 3100 }
+  ARROW_SAND_JUMP: { category: "PROJECTILE", material: "SAND", price: 2400 }
+  ARROW_GRAVEL: { category: "PROJECTILE", material: "GRAVEL", price: 2400 }
+  ARROW_CLAY: { category: "PROJECTILE", material: "CLAY_BALL", price: 2900 }
+  ARROW_BRICK: { category: "PROJECTILE", material: "BRICK", price: 3300 }
+  ARROW_NETHER_BRICK: { category: "PROJECTILE", material: "NETHER_BRICK", price: 4100 }
 
-  # --- WIN EFFECTS (Kazanma Efektleri) ---
-  WIN_LIGHTNING_STORM:
-    category: "WIN"
-    material: "TRIDENT"
-    price: 5000
-  WIN_ANGELIC_DESCENT:
-    category: "WIN"
-    material: "FEATHER"
-    price: 6000
-  WIN_DRAGON_ROAR:
-    category: "WIN"
-    material: "DRAGON_HEAD"
-    price: 7500
-  WIN_NETHER_LORD:
-    category: "WIN"
-    material: "WITHER_SKELETON_SKULL"
-    price: 8500
-  WIN_COSMIC:
-    category: "WIN"
-    material: "END_PORTAL_FRAME"
-    price: 10000
-  WIN_WARDEN:
-    category: "WIN"
-    material: "SCULK_SHRIEKER"
-    price: 12000
-  WIN_METEOR_SHOWER:
-    category: "WIN"
-    material: "MAGMA_BLOCK"
-    price: 15000
-  WIN_GARDEN_OF_EDEN:
-    category: "WIN"
-    material: "GRASS_BLOCK"
-    price: 7000
-  WIN_DIAMOND_EXPLOSION:
-    category: "WIN"
-    material: "DIAMOND_BLOCK"
-    price: 25000
-  WIN_GOLDEN_TOUCH:
-    category: "WIN"
-    material: "GOLD_BLOCK"
-    price: 20000
-  WIN_CHICKEN_PARTY:
-    category: "WIN"
-    material: "CHICKEN_SPAWN_EGG"
-    price: 8000
-  WIN_GHAST_TEARS:
-    category: "WIN"
-    material: "GHAST_TEAR"
-    price: 9500
-  WIN_SNOW_GLOBE:
-    category: "WIN"
-    material: "ICE"
-    price: 6500
-  WIN_BEACON_BEAM:
-    category: "WIN"
-    material: "BEACON"
-    price: 30000
-  WIN_PHOENIX_RISE:
-    category: "WIN"
-    material: "BLAZE_ROD"
-    price: 18000
-  WIN_TORNADO:
-    category: "WIN"
-    material: "STRING"
-    price: 13000
-  WIN_DISCO_FLOOR:
-    category: "WIN"
-    material: "REDSTONE_LAMP"
-    price: 11000
-  WIN_PIRATE_TREASURE:
-    category: "WIN"
-    material: "CHEST"
-    price: 14000
-  WIN_VOLCANO:
-    category: "WIN"
-    material: "OBSIDIAN"
-    price: 17000
-  WIN_ANCIENT_DEBRIS:
-    category: "WIN"
-    material: "ANCIENT_DEBRIS"
-    price: 40000
-  WIN_RAINBOW_SKY:
-    category: "WIN"
-    material: "BLUE_ORCHID"
-    price: 22000
-  WIN_MUSIC_FESTIVAL:
-    category: "WIN"
-    material: "JUKEBOX"
-    price: 16000
-  WIN_BEE_SWARM:
-    category: "WIN"
-    material: "BEE_NEST"
-    price: 9000
-  WIN_ENDER_STORM:
-    category: "WIN"
-    material: "DRAGON_EGG"
-    price: 50000
-  WIN_OCEAN_TEMPLE:
-    category: "WIN"
-    material: "PRISMARINE_BRICKS"
-    price: 19000
+  # ==========================================
+  # --- WIN EFFECTS (75+ ITEMS) ---
+  # ==========================================
+  WIN_LIGHTNING_STORM: { category: "WIN", material: "TRIDENT", price: 5000 }
+  WIN_ANGELIC_DESCENT: { category: "WIN", material: "FEATHER", price: 6000 }
+  WIN_DRAGON_ROAR: { category: "WIN", material: "DRAGON_HEAD", price: 7500 }
+  WIN_NETHER_LORD: { category: "WIN", material: "WITHER_SKELETON_SKULL", price: 8500 }
+  WIN_COSMIC: { category: "WIN", material: "END_PORTAL_FRAME", price: 10000 }
+  WIN_WARDEN: { category: "WIN", material: "SCULK_SHRIEKER", price: 12000 }
+  WIN_METEOR_SHOWER: { category: "WIN", material: "MAGMA_BLOCK", price: 15000 }
+  WIN_GARDEN_OF_EDEN: { category: "WIN", material: "GRASS_BLOCK", price: 7000 }
+  WIN_DIAMOND_EXPLOSION: { category: "WIN", material: "DIAMOND_BLOCK", price: 25000 }
+  WIN_GOLDEN_TOUCH: { category: "WIN", material: "GOLD_BLOCK", price: 20000 }
+  WIN_CHICKEN_PARTY: { category: "WIN", material: "CHICKEN_SPAWN_EGG", price: 8000 }
+  WIN_GHAST_TEARS: { category: "WIN", material: "GHAST_TEAR", price: 9500 }
+  WIN_SNOW_GLOBE: { category: "WIN", material: "ICE", price: 6500 }
+  WIN_BEACON_BEAM: { category: "WIN", material: "BEACON", price: 30000 }
+  WIN_PHOENIX_RISE: { category: "WIN", material: "BLAZE_ROD", price: 18000 }
+  WIN_TORNADO: { category: "WIN", material: "STRING", price: 13000 }
+  WIN_DISCO_FLOOR: { category: "WIN", material: "REDSTONE_LAMP", price: 11000 }
+  WIN_PIRATE_TREASURE: { category: "WIN", material: "CHEST" , price: 14000 }
+  WIN_VOLCANO: { category: "WIN", material: "OBSIDIAN" , price: 17000 }
+  WIN_ANCIENT_DEBRIS: { category: "WIN", material: "ANCIENT_DEBRIS" , price: 40000 }
+  WIN_RAINBOW_SKY: { category: "WIN", material: "BLUE_ORCHID" , price: 22000 }
+  WIN_MUSIC_FESTIVAL: { category: "WIN", material: "JUKEBOX" , price: 16000 }
+  WIN_BEE_SWARM: { category: "WIN", material: "BEE_NEST" , price: 9000 }
+  WIN_ENDER_STORM: { category: "WIN", material: "DRAGON_EGG" , price: 50000 }
+  WIN_OCEAN_TEMPLE: { category: "WIN", material: "PRISMARINE_BRICKS" , price: 19000 }
+  WIN_VILLAGER_CONGA: { category: "WIN", material: "EMERALD_BLOCK", price: 15000 }
+  WIN_IRON_DEFENDER: { category: "WIN", material: "IRON_GOLEM_SPAWN_EGG", price: 18000 }
+  WIN_SNOW_ARMY: { category: "WIN", material: "SNOW_GOLEM_SPAWN_EGG", price: 12000 }
+  WIN_ZOMBIE_APOCALYPSE: { category: "WIN", material: "ZOMBIE_SPAWN_EGG", price: 14000 }
+  WIN_SKELETON_HORDE: { category: "WIN", material: "SKELETON_SPAWN_EGG", price: 14000 }
+  WIN_CREEPER_BOOM: { category: "WIN", material: "CREEPER_SPAWN_EGG", price: 20000 }
+  WIN_SPIDER_NEST: { category: "WIN", material: "SPIDER_SPAWN_EGG", price: 11000 }
+  WIN_SLIME_JUMP_PARTY: { category: "WIN", material: "SLIME_SPAWN_EGG", price: 13000 }
+  WIN_MAGMA_CUBE_PARTY: { category: "WIN", material: "MAGMA_CUBE_SPAWN_EGG", price: 13000 }
+  WIN_BLAZE_INFERNO: { category: "WIN", material: "BLAZE_SPAWN_EGG", price: 17000 }
+  WIN_GHAST_FIREBALLS: { category: "WIN", material: "GHAST_SPAWN_EGG", price: 22000 }
+  WIN_ENDERMAN_TP: { category: "WIN", material: "ENDERMAN_SPAWN_EGG", price: 19000 }
+  WIN_SHULKER_BULLETS: { category: "WIN", material: "SHULKER_SPAWN_EGG", price: 25000 }
+  WIN_WITHER_SKELETONS: { category: "WIN", material: "WITHER_SKELETON_SPAWN_EGG", price: 28000 }
+  WIN_PIGLIN_DANCE: { category: "WIN", material: "PIGLIN_SPAWN_EGG", price: 16000 }
+  WIN_HOGLIN_CHARGE: { category: "WIN", material: "HOGLIN_SPAWN_EGG", price: 18000 }
+  WIN_STRIDER_LAVA_SURF: { category: "WIN", material: "STRIDER_SPAWN_EGG", price: 15000 }
+  WIN_AXOLOTL_SWIM: { category: "WIN", material: "AXOLOTL_SPAWN_EGG", price: 21000 }
+  WIN_GLOW_SQUID_LIGHT: { category: "WIN", material: "GLOW_SQUID_SPAWN_EGG", price: 19000 }
+  WIN_GOAT_JUMP: { category: "WIN", material: "GOAT_SPAWN_EGG", price: 14000 }
+  WIN_FROG_CONCERT: { category: "WIN", material: "FROG_SPAWN_EGG", price: 16000 }
+  WIN_ALLAY_GIFT: { category: "WIN", material: "ALLAY_SPAWN_EGG", price: 25000 }
+  WIN_CAT_PURR: { category: "WIN", material: "CAT_SPAWN_EGG", price: 9000 }
+  WIN_WOLF_PACK: { category: "WIN", material: "WOLF_SPAWN_EGG", price: 11000 }
+  WIN_PARROT_DISCO: { category: "WIN", material: "PARROT_SPAWN_EGG", price: 13000 }
+  WIN_PANDA_ROLL: { category: "WIN", material: "PANDA_SPAWN_EGG", price: 15000 }
+  WIN_FOX_SLEEP: { category: "WIN", material: "FOX_SPAWN_EGG", price: 12000 }
+  WIN_POLAR_BEAR_ICE: { category: "WIN", material: "POLAR_BEAR_SPAWN_EGG", price: 17000 }
+  WIN_LLAMA_SPIT: { category: "WIN", material: "LLAMA_SPAWN_EGG", price: 11000 }
+  WIN_HORSE_RIDE: { category: "WIN", material: "HORSE_SPAWN_EGG", price: 14000 }
+  WIN_DONKEY_TREASURE: { category: "WIN", material: "DONKEY_SPAWN_EGG", price: 14000 }
+  WIN_MULE_CARRY: { category: "WIN", material: "MULE_SPAWN_EGG", price: 14000 }
+  WIN_SKELETON_HORSE: { category: "WIN", material: "SKELETON_HORSE_SPAWN_EGG", price: 25000 }
+  WIN_ZOMBIE_HORSE: { category: "WIN", material: "ZOMBIE_HORSE_SPAWN_EGG", price: 25000 }
+  WIN_MOOSHROOM_MILK: { category: "WIN", material: "MOOSHROOM_SPAWN_EGG", price: 16000 }
+  WIN_TURTLE_BEACH: { category: "WIN", material: "TURTLE_SPAWN_EGG", price: 18000 }
+  WIN_DOLPHIN_RACE: { category: "WIN", material: "DOLPHIN_SPAWN_EGG", price: 21000 }
+  WIN_SQUID_INK_CLOUD: { category: "WIN", material: "SQUID_SPAWN_EGG", price: 9000 }
+  WIN_GLOW_SQUID_CLOUD: { category: "WIN", material: "GLOW_SQUID_SPAWN_EGG", price: 11000 }
+  WIN_COD_SWARM: { category: "WIN", material: "COD_SPAWN_EGG", price: 7000 }
+  WIN_SALMON_SWARM: { category: "WIN", material: "SALMON_SPAWN_EGG", price: 7000 }
+  WIN_PUFFERFISH_POP: { category: "WIN", material: "PUFFERFISH_SPAWN_EGG", price: 9000 }
+  WIN_TROPICAL_FISH_REEF: { category: "WIN", material: "TROPICAL_FISH_SPAWN_EGG", price: 11000 }
+  WIN_TADPOLE_POOL: { category: "WIN", material: "TADPOLE_SPAWN_EGG", price: 8000 }
+  WIN_BAT_CAVE: { category: "WIN", material: "BAT_SPAWN_EGG", price: 10000 }
+  WIN_VEX_FLIGHT: { category: "WIN", material: "VEX_SPAWN_EGG", price: 20000 }
+  WIN_EVOKER_SPELL: { category: "WIN", material: "EVOKER_SPAWN_EGG", price: 35000 }
+  WIN_PILLAGER_PATROL: { category: "WIN", material: "PILLAGER_SPAWN_EGG", price: 18000 }
+  WIN_RAVAGER_STAMPEDE: { category: "WIN", material: "RAVAGER_SPAWN_EGG", price: 40000 }
+  WIN_WITCH_MAGIC: { category: "WIN", material: "WITCH_SPAWN_EGG", price: 22000 }
