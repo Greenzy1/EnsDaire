@@ -1,0 +1,17 @@
+title: "&8Oyuncu Düzenleyici"
+rows: 3
+items:
+  search:
+    material: "NAME_TAG"
+    slot: 13
+    name: "&eOyuncu Ara"
+    lore:
+      - "&7İstatistiklerini düzenlemek"
+      - "&7istediğin oyuncuyu ara."
+filler:
+  material: "GRAY_STAINED_GLASS_PANE"
+  name: " "
+back-button:
+  material: "ARROW"
+  slot: 22
+  name: "&cGeri Dön"

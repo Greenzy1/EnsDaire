@@ -1,0 +1,108 @@
+# Kozmetik Ayarları
+# Her kozmetik öğesi izinleri, fiyatı ve görünümü ile buradan yapılandırılabilir
+categories:
+  TRAIL:
+    material: "BLAZE_POWDER"
+    name: "&bYürüme İzleri"
+    lore:
+      - "&7Yürürken arkanızda"
+      - "&7çıkacak partiküller."
+  KILL:
+    material: "TNT"
+    name: "&cÖldürme Efektleri"
+    lore:
+      - "&7Birini öldürdüğünüzde"
+      - "&7çıkacak partiküller."
+  PROJECTILE:
+    material: "ARROW"
+    name: "&eOk Efektleri"
+    lore:
+      - "&7Ok attığınızda"
+      - "&7arkasında kalan iz."
+  WIN:
+    material: "NETHER_STAR"
+    name: "&6Kazanma Dansları"
+    lore:
+      - "&7Oyunu kazandığınızda"
+      - "&7çıkacak görkemli efekt."
+
+items:
+  # TRAILS
+  TRAIL_FLAME:
+    category: "TRAIL"
+    material: "BLAZE_POWDER"
+    price: 2000
+  TRAIL_HEART:
+    category: "TRAIL"
+    material: "POPPY"
+    price: 3000
+  TRAIL_SOUL:
+    category: "TRAIL"
+    material: "SOUL_LANTERN"
+    price: 4000
+  TRAIL_CRIT:
+    category: "TRAIL"
+    material: "IRON_SWORD"
+    price: 1500
+  TRAIL_GLOW:
+    category: "TRAIL"
+    material: "GLOWSTONE_DUST"
+    price: 2500
+    
+  # KILL EFFECTS
+  KILL_EXPLOSION:
+    category: "KILL"
+    material: "TNT"
+    price: 5000
+  KILL_LIGHTNING:
+    category: "KILL"
+    material: "LIGHTNING_ROD"
+    price: 6000
+  KILL_BLOOD:
+    category: "KILL"
+    material: "REDSTONE"
+    price: 3500
+  KILL_GHOST:
+    category: "KILL"
+    material: "GHAST_TEAR"
+    price: 4500
+
+  # PROJECTILES
+  ARROW_SMOKE:
+    category: "PROJECTILE"
+    material: "COAL"
+    price: 2000
+  ARROW_SPARK:
+    category: "PROJECTILE"
+    material: "COPPER_INGOT"
+    price: 3000
+  ARROW_MAGIC:
+    category: "PROJECTILE"
+    material: "DRAGON_BREATH"
+    price: 4000
+
+  # WIN EFFECTS
+  WIN_LIGHTNING_STORM:
+    category: "WIN"
+    material: "TRIDENT"
+    price: 5000
+  WIN_ANGELIC_DESCENT:
+    category: "WIN"
+    material: "FEATHER"
+    price: 6000
+  WIN_DRAGON_ROAR:
+    category: "WIN"
+    material: "DRAGON_HEAD"
+    price: 7500
+  WIN_NETHER_LORD:
+    category: "WIN"
+    material: "WITHER_SKELETON_SKULL"
+    price: 8500
+  WIN_COSMIC:
+    category: "WIN"
+    material: "END_PORTAL_FRAME"
+    price: 10000
+  WIN_WARDEN:
+    category: "WIN"
+    material: "SCULK_SHRIEKER"
+    price: 12000

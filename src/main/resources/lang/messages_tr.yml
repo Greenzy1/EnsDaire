@@ -1,0 +1,19 @@
+prefix: "&b&lENSDAIRE &8» &r"
+game:
+  start: "&aOyun başlıyor! Başarılar dileriz."
+  countdown: "&eOyunun başlamasına &f%seconds% &esaniye kaldı."
+  not-enough-players: "&cArena başlamak için yeterli oyuncu sayısına ulaşmadı."
+  player-join: "&f%player% &7oyuna katıldı!"
+  player-quit: "&f%player% &7oyundan ayrıldı."
+  team-select: "&7Seçilen takım: %team%"
+  eliminated: "&c%player% elendi!"
+  winner: "&6%team% &etakımı kazandı!"
+admin:
+  arena-created: "&aArena başarıyla oluşturuldu."
+  arena-reset: "&eArena sıfırlanıyor..."
+  stat-updated: "&aOyuncu istatistiği güncellendi."
+  reload: "&bEklenti ayarları başarıyla yenilendi!"
+error:
+  no-permission: "&cBu komutu kullanmak için yetkiniz yok!"
+  player-only: "&cBu komutu sadece oyuncular kullanabilir."
+  arena-full: "&cArena dolu!"

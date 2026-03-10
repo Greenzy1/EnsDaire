@@ -9,13 +9,50 @@
 
 ---
 
-**ᴇɴꜱᴅᴀɪʀᴇ**, son derece profesyonel, tamamen özelleştirilebilir ve titizlikle tasarlanmış bir Minecraft mini-oyun eklentisidir. Popüler "Color Islands" ve "Zone Wars" mekaniklerinden esinlenilmiştir; oyuncular, kendilerine atanan renklere uyan blokların üzerinde durarak hayatta kalmaya çalışırken dinamik oyun elementleri, değiştiriciler (modifier) ve kıyasıya PvP ile mücadele ederler.
+# EnsDaire - Professional Circle Mini-Game Plugin
+
+EnsDaire, gelişmiş özellikleri ve tamamen özelleştirilebilir yapısıyla sunucunuza premium bir oyun deneyimi katar.
+
+## 🌟 Öne Çıkan Özellikler
+
+*   **GUI Odaklı Yönetim:** Tüm oyuncu ve admin işlemleri modern, konfigüre edilebilir arayüzler üzerinden yapılır.
+*   **Gelişmiş Kozmetikler:** Kill efektleri, kazanma efektleri ve daha fazlasını içeren gelişmiş kozmetik sistemi.
+*   **Dinamik BossBar & Actionbar:** Oyun durumunu (geri sayım, süre, sağ kalanlar) takip eden animasyonlu göstergeler.
+*   **Hareketli Scoreboard:** Özelleştirilebilir, animasyonlu başlıklar ve kapsamlı bilgi tablosu.
+*   **Holografik Liderlik Tablosu:** İlk 10 oyuncuyu gösteren şık, premium görünümlü liderlik tabloları.
+*   **Tamamen Veri Odaklı:** GUI başlıklarından slotlara, item lore'larından materyallere kadar her şey YAML dosyalarıyla değiştirilebilir.
+*   **Modern Kod Yapısı:** Gelişmiş API, NamespacedKey tabanlı item tanıma ve performans odaklı mimari.
+
+## 🛠️ Komutlar
+
+*   `/daire` - Ana oyun menüsünü açar (Arena Seçimi).
+*   `/katil <arena>` - Belirtilen arenaya hızlıca katılır.
+*   `/ayril` - Mevcut oyundan ayrılır (Durum verilerini geri yükler).
+*   `/kozmetik` - Kozmetik mağazasını açar.
+*   `/istatistik` - Kişisel verilerinizi gösterir.
+*   `/ed admin` - Yönetim panelini açar.
+*   `/ed reload` - Tüm dosyaları anında yeniler.
+
+## ⚙️ Konfigürasyon Dosyaları
+
+*   `config.yml`: Genel oyun ayarları, süreler ve mekanikler.
+*   `guis.yml`: Tüm arayüzlerin (Menu) tasarımı, başlıkları ve itemları.
+*   `cosmetics.yml`: Kozmetik kategorileri ve içerikleri.
+*   `messages_tr.yml`: Tüm dildeki mesajların ve prefixlerin ayarı.
+
+## 🚀 Kurulum
+
+1.  Jar dosyasını `plugins` klasörüne atın.
+2.  Sunucuyu başlatın ve oluşan dosyaları isteğinize göre düzenleyin.
+3.  `/ed reload` komutuyla ayarlarınızı uygulayın.
+
+---
+**Ensis Geliştirme Ekibi** | [ensis.net](https://ensis.net)
 
 [![Paper API](https://img.shields.io/badge/API-Paper%201.20.1-green.svg)](https://papermc.io/)
-[![Version](https://img.shields.io/badge/Version-1.0.0--MEGA-blue.svg)]()
+[![Version](https://img.shields.io/badge/Version-2.0-blue.svg)]()
 [![Database](https://img.shields.io/badge/Database-SQLite-red.svg)]()
 
-> *Mutlak yapısal bütünlükle tasarlandı. Sıfır kod yorumu. A'dan Z'ye özelleştirme.*
 
 </div>
 
@@ -55,7 +92,7 @@ Tüm işlevler bütünleşik bir komut hiyerarşisi üzerinden yönetilir.
 
 ## ✦ ᴋ ᴜ ʀ ᴜ ʟ ᴜ ᴍ
 
-1. **ᴅᴇᴘʟᴏʏᴍᴇɴᴛ:** `EnsDaire-1.0.0.jar` dosyasını `/plugins` klasörüne kopyalayın.
+1. **ᴅᴇᴘʟᴏʏᴍᴇɴᴛ:** `EnsDaire-2.0.jar` dosyasını `/plugins` klasörüne kopyalayın.
 2. **ᴅᴇᴘᴇɴᴅᴇɴᴄɪᴇꜱ:** Sunucunuzda `PlaceholderAPI` ve `Vault` eklentilerinin yüklü olduğundan emin olun.
 3. **ɪɴɪᴛɪᴀʟɪᴢᴀᴛɪᴏɴ:** Konfigürasyon dosyalarını oluşturması için Minecraft sunucusunu yeniden başlatın.
 4. **ᴀʀᴇɴᴀ ʜᴀᴢɪʀʟᴀᴍᴀ:** 

@@ -1,6 +1,6 @@
 name: EnsDaire
 version: '${project.version}'
-main: net.ensis.ensdaire.EnsDaire
+main: org.byauth.ByCircleGame
 api-version: '1.20'
 description: Daireden Son Çıkan Kazanır - EnsDaire Mini Game
 authors: [Ensis]
@@ -14,6 +14,12 @@ commands:
     description: Bir arenaya katılır.
   ayril:
     description: Aktif arenadan ayrılır.
+  kozmetik:
+    description: Kozmetik menüsünü açar.
+    aliases: [market, kozmetikler]
+  destekle:
+    description: İzleyiciyken açık olan oyuncuları desteklemeni sağlar.
+    aliases: [destek]
 
 permissions:
   ensdaire.play:

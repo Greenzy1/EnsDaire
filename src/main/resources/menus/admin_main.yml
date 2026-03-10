@@ -1,0 +1,27 @@
+title: "&8Yönetim Paneli"
+rows: 3
+items:
+  arena-manager:
+    material: "GRASS_BLOCK"
+    slot: 11
+    name: "&aArena Yönetimi"
+    lore:
+      - "&7Tüm arenaları görüntülemek ve"
+      - "&7yönetmek için tıkla."
+  player-editor:
+    material: "PLAYER_HEAD"
+    slot: 13
+    name: "&eOyuncu Düzenleyici"
+    lore:
+      - "&7Oyuncu istatistiklerini"
+      - "&7düzenlemek için tıkla."
+  system-settings:
+    material: "COMMAND_BLOCK"
+    slot: 15
+    name: "&bSistem Ayarları"
+    lore:
+      - "&7Eklenti ayarlarını yenilemek ve"
+      - "&7durumu kontrol etmek için tıkla."
+filler:
+  material: "GRAY_STAINED_GLASS_PANE"
+  name: " "

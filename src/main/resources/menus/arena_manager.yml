@@ -1,0 +1,10 @@
+title: "&8Arena Yönetimi"
+rows: 6
+items: {} # Dynamically populated in code usually, but define structure here
+filler:
+  material: "GRAY_STAINED_GLASS_PANE"
+  name: " "
+back-button:
+  material: "ARROW"
+  slot: 49
+  name: "&cGeri Dön"

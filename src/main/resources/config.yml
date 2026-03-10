@@ -65,6 +65,17 @@ scoreboard:
   update-interval: 10
   footer: "&7ensis.net"
 
+holograms:
+  enabled: true
+  top-10:
+    title: "&6&lEn İyiler İlk 10"
+    format: "&e{place}. &f{player} &8- &a{value}"
+    update-interval: 600
+
+advanced:
+  debug-mode: false
+  custom-events: true
+
 sounds:
   countdown: "BLOCK_NOTE_BLOCK_PLING"
   round-start: "ENTITY_EXPERIENCE_ORB_PICKUP"

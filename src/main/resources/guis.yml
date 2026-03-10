@@ -1,0 +1,150 @@
+arenas:
+  title: "&8➤ Arena Seçimi"
+  size: 54
+  filler:
+    material: "BLACK_STAINED_GLASS_PANE"
+    name: " "
+  slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+  items:
+    waiting:
+      material: "LIME_CONCRETE"
+      name: "&a{arena}"
+      lore:
+        - "&7Durum: &aBekleniyor"
+        - "&7Oyuncular: &f{current}&8/&f{max}"
+        - ""
+        - "&eKatılmak için tıkla!"
+    playing:
+      material: "RED_CONCRETE"
+      name: "&c{arena}"
+      lore:
+        - "&7Durum: &cOyunda"
+        - "&7Oyuncular: &f{current}"
+        - ""
+        - "&eİzlemek için tıkla!"
+  buttons:
+    admin:
+      slot: 49
+      material: "COMMAND_BLOCK"
+      name: "&cAdmin Paneli"
+      lore:
+        - "&7Ayarları yönetmek için"
+        - "&7tıklayın."
+
+admin_panel:
+  title: "&8➤ Admin Paneli"
+  size: 27
+  filler:
+    material: "GRAY_STAINED_GLASS_PANE"
+    name: " "
+  items:
+    arenas:
+      slot: 10
+      material: "IRON_SWORD"
+      name: "&e&lArenalar"
+      lore:
+        - "&7Sunucudaki arenaları"
+        - "&7oluştur, düzenle veya sil."
+    colors:
+      slot: 12
+      material: "RED_DYE"
+      name: "&c&lRenk & Bloklar"
+      lore:
+        - "&7Hangi rengin hangi blokta"
+        - "&7yürüyeceğini ayarla."
+    loot:
+      slot: 14
+      material: "CHEST"
+      name: "&6&lLoot Editörü"
+      lore:
+        - "&7Shulker kutularından çıkacak"
+        - "&7eşyaları belirle."
+    reload:
+      slot: 16
+      material: "COMPARATOR"
+      name: "&a&lSistem"
+      lore:
+        - "&7Dosyaları yenile ve"
+        - "&7durumu kontrol et."
+    close:
+      slot: 22
+      material: "BARRIER"
+      name: "&cKapat"
+      lore: []
+
+support:
+  title: "&8➤ Destek: {player}"
+  size: 27
+  filler:
+    material: "LIGHT_BLUE_STAINED_GLASS_PANE"
+    name: " "
+  items:
+    heal:
+      slot: 10
+      material: "GOLDEN_APPLE"
+      name: "&aAnında İyileştirme"
+      price: 20
+      lore:
+        - "&7Oyuncuya anında sağlık"
+        - "&7verir."
+        - ""
+        - "&eFiyat: &f{price} Jeton"
+    speed:
+      slot: 12
+      material: "SUGAR"
+      name: "&bHız Desteği"
+      price: 15
+      lore:
+        - "&7Oyuncuya Hız efekti"
+        - "&7verir."
+        - ""
+        - "&eFiyat: &f{price} Jeton"
+    jump:
+      slot: 14
+      material: "RABBIT_FOOT"
+      name: "&eZıplama Desteği"
+      price: 10
+      lore:
+        - "&7Oyuncuya Zıplama efekti"
+        - "&7verir."
+        - ""
+        - "&eFiyat: &f{price} Jeton"
+    shield:
+      slot: 16
+      material: "SHIELD"
+      name: "&6Kalkan Desteği"
+      price: 25
+      lore:
+        - "&7Oyuncuya Direnç efekti"
+        - "&7verir."
+        - ""
+        - "&eFiyat: &f{price} Jeton"
+  buttons:
+    back:
+      slot: 22
+      material: "ARROW"
+      name: "&cGeri Dön"
+      lore: []
+
+team_select:
+  title: "&8Takım Seçimi"
+  size: 27
+  # Slots for specific colors could be here too, but for simplicity let's keep it 10-16
+
+arena_list:
+  title: "&8Arena Listesi"
+  size: 54
+
+stats:
+  title: "&8İstatistiklerin"
+  size: 27
+
+color_block:
+  title: "&8Renk & Blok Ayarı"
+  size: 27
+
+cosmetics_main:
+  title: "&8Kozmetik Menüsü"
+  size: 27
+  filler:
+    material: "GRAY_STAINED_GLASS_PANE"
