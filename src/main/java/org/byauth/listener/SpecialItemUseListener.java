@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.byauth.game.Arena;
 import org.byauth.game.ArenaState;
@@ -13,7 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.byauth.EnsDaire;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class SpecialItemUseListener implements Listener {
 

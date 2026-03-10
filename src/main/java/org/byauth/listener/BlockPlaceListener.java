@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.game.Arena;
 import org.byauth.game.ArenaState;
 import org.byauth.game.Team;
@@ -12,9 +12,9 @@ import org.bukkit.event.block.BlockPlaceEvent;
 
 public class BlockPlaceListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
 
-    public BlockPlaceListener(ByCircleGame plugin) {
+    public BlockPlaceListener(EnsDaire plugin) {
         this.plugin = plugin;
     }
 

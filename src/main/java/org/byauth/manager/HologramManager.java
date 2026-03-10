@@ -1,11 +1,11 @@
 package org.byauth.manager;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
-import org.byauth.EnsDaire;
+import org.bukkit.entity.EntityType;
 
 import java.util.ArrayList;
 import java.util.List;

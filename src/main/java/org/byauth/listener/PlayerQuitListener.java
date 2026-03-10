@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,7 +11,7 @@ public class PlayerQuitListener implements Listener {
 
     private final ArenaController arenaController;
 
-    public PlayerQuitListener(ByCircleGame plugin) {
+    public PlayerQuitListener(EnsDaire plugin) {
         this.arenaController = plugin.getArenaController();
     }
 

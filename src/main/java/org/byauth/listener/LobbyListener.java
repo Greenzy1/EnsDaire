@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.byauth.utils.SettingsManager;
 import org.bukkit.Material;
@@ -13,11 +13,11 @@ import org.bukkit.inventory.ItemStack;
 
 public class LobbyListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final ArenaController arenaController;
     private final SettingsManager settings;
 
-    public LobbyListener(ByCircleGame plugin) {
+    public LobbyListener(EnsDaire plugin) {
         this.plugin = plugin;
         this.arenaController = plugin.getArenaController();
         this.settings = plugin.getSettingsManager();

@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -9,9 +9,9 @@ import org.bukkit.inventory.InventoryView;
 
 public class AdminGuiListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
 
-    public AdminGuiListener(ByCircleGame plugin) {
+    public AdminGuiListener(EnsDaire plugin) {
         this.plugin = plugin;
     }
 

@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.byauth.data.PlayerStats;
 import org.byauth.game.Arena;
@@ -16,12 +16,12 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class PlayerDeathListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final ArenaController arenaController;
     private final PlayerDataManager playerDataManager;
     private final SettingsManager settings;
 
-    public PlayerDeathListener(ByCircleGame plugin) {
+    public PlayerDeathListener(EnsDaire plugin) {
         this.plugin = plugin;
         this.arenaController = plugin.getArenaController();
         this.playerDataManager = plugin.getPlayerDataManager();

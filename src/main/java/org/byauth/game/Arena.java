@@ -1,6 +1,6 @@
 package org.byauth.game;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.manager.ArenaManager;
 import org.byauth.manager.GameManager;
 import org.bukkit.Location;
@@ -15,7 +15,7 @@ public class Arena {
 
     private final String name;
     private String displayName;
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final Set<UUID> players;
     private final Set<UUID> spectators;
     private ArenaState state;
@@ -30,7 +30,7 @@ public class Arena {
     private int maxPlayers = 8;
     private String type = "Solo";
 
-    public Arena(String name, ByCircleGame plugin, Location lobbyLocation, Location centerLocation) {
+    public Arena(String name, EnsDaire plugin, Location lobbyLocation, Location centerLocation) {
         this.name = name;
         this.plugin = plugin;
         this.lobbyLocation = lobbyLocation;
@@ -46,7 +46,7 @@ public class Arena {
         this.id = UUID.randomUUID().toString();
     }
 
-    public Arena(ByCircleGame plugin, String id) {
+    public Arena(EnsDaire plugin, String id) {
         this.plugin = plugin;
         this.id = id;
         this.name = id; // Or some default name based on id

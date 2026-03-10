@@ -1,11 +1,11 @@
 package org.byauth.manager;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.data.VictoryEffect;
 import org.byauth.utils.SettingsManager;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.byauth.EnsDaire;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.util.ArrayList;

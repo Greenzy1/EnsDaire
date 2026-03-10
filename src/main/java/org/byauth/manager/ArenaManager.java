@@ -1,6 +1,6 @@
 package org.byauth.manager;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.game.Arena;
 import org.byauth.game.Team;
 import org.byauth.utils.SettingsManager;
@@ -9,7 +9,7 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
-import org.byauth.EnsDaire;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;

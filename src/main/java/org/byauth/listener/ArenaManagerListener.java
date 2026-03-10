@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.game.Arena;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -10,9 +10,9 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 public class ArenaManagerListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
 
-    public ArenaManagerListener(ByCircleGame plugin) {
+    public ArenaManagerListener(EnsDaire plugin) {
         this.plugin = plugin;
     }
 

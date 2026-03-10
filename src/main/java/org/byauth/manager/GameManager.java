@@ -1,6 +1,6 @@
 package org.byauth.manager;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.data.PlayerStats;
 import org.byauth.game.Arena;
 import org.byauth.game.ArenaState;

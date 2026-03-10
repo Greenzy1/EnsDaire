@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.byauth.game.Arena;
 import org.byauth.game.ArenaState;
@@ -18,7 +18,7 @@ public class GuiListener implements Listener {
     private final ArenaController arenaController;
     private final SettingsManager settings;
 
-    public GuiListener(ByCircleGame plugin) {
+    public GuiListener(EnsDaire plugin) {
         this.arenaController = plugin.getArenaController();
         this.settings = plugin.getSettingsManager();
     }

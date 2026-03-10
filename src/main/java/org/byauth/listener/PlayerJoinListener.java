@@ -1,6 +1,6 @@
 package org.byauth.listener;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.byauth.game.Arena;
 import org.byauth.utils.SettingsManager;
@@ -13,11 +13,11 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerJoinListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final ArenaController arenaController;
     private final SettingsManager settings;
 
-    public PlayerJoinListener(ByCircleGame plugin) {
+    public PlayerJoinListener(EnsDaire plugin) {
         this.plugin = plugin;
         this.arenaController = plugin.getArenaController();
         this.settings = plugin.getSettingsManager();
