@@ -65,6 +65,11 @@ public final class EnsDaire extends JavaPlugin {
         services.put(PartyManager.class, new PartyManager(this));
         services.put(AchievementManager.class, new AchievementManager(this));
         services.put(GameEventManager.class, new GameEventManager(this));
+        services.put(CombatManager.class, new CombatManager(this));
+        services.put(ReplayManager.class, new ReplayManager(this));
+        services.put(WebHookManager.class, new WebHookManager(this));
+        services.put(AnalyticsManager.class, new AnalyticsManager(this));
+        services.put(TournamentManager.class, new TournamentManager(this));
     }
 
     private void registerEvents() {
