@@ -22,10 +22,10 @@ public final class EnsDaire extends JavaPlugin {
     private GuiManager guiManager;
     private SettingsManager settingsManager;
     private VictoryEffects victoryEffects;
+    private EditorManager editorManager;
 
     @Override
     public void onEnable() {
-        instance = this;
         instance = this;
         this.settingsManager = new SettingsManager(this);
         this.databaseManager = new DatabaseManager(this);
@@ -39,6 +39,7 @@ public final class EnsDaire extends JavaPlugin {
         this.guiManager = new GuiManager(this);
         this.victoryEffects = new VictoryEffects(this);
         this.arenaController = new ArenaController(this);
+        this.editorManager = new EditorManager(this);
 
         getCommand("ensdaire").setExecutor(new AdminCommand(this));
 
@@ -55,6 +56,7 @@ public final class EnsDaire extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AdminGuiListener(this), this);
         getServer().getPluginManager().registerEvents(new ArenaManagerListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerEditorListener(this), this);
+        getServer().getPluginManager().registerEvents(new EditorChatListener(this), this);
 
         getLogger().info("EnsDaire (EnsDaire Infrastructure) aktif!");
     }
@@ -104,5 +106,13 @@ public final class EnsDaire extends JavaPlugin {
 
     public PlayerDataManager getPlayerDataManager() {
         return playerDataManager;
+    }
+
+    public EditorManager getEditorManager() {
+        return editorManager;
+    }
+
+    public static EnsDaire getInstance() {
+        return instance;
     }
 }

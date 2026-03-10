@@ -1,6 +1,9 @@
 package org.byauth.manager;
 
 import org.byauth.EnsDaire;
+import org.byauth.game.Arena;
+import org.byauth.game.ArenaState;
+import org.byauth.game.Team;
 import org.byauth.utils.ItemBuilder;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -66,15 +69,15 @@ public class GuiManager {
     public Inventory createArenaManagerInventory() {
         Inventory inv = createInventoryFromConfig("arena_manager");
         if (inv == null)
-            return null;
+            inv = Bukkit.createInventory(null, 54, "Arena Yönetimi");
 
         int slot = 0;
-        for (org.byauth.game.Arena arena : plugin.getArenaController().getArenas()) {
+        for (Arena arena : plugin.getArenaController().getArenas()) {
             if (slot >= 45)
-                break; // Avoid overflow
+                break;
 
-            String color = arena.getState() == org.byauth.game.ArenaState.WAITING ? "&a"
-                    : arena.getState() == org.byauth.game.ArenaState.STARTING ? "&e" : "&c";
+            String color = arena.getState() == ArenaState.WAITING ? "&a"
+                    : arena.getState() == ArenaState.STARTING ? "&e" : "&c";
 
             ItemStack item = new ItemBuilder(Material.PAPER)
                     .setName(plugin.getSettingsManager().format(color + arena.getId()))
@@ -84,10 +87,45 @@ public class GuiManager {
                                     "&7Oyuncular: &f" + arena.getPlayers().size() + "/" + arena.getMaxPlayers()),
                             plugin.getSettingsManager().format("&7Mod: &f" + arena.getType()),
                             "",
-                            plugin.getSettingsManager().format("&eYönetmek için tıkla!")))
+                            plugin.getSettingsManager().format("&eDüzenlemek için tıkla!")))
                     .build();
             inv.setItem(slot++, item);
         }
+        
+        inv.setItem(49, new ItemBuilder(Material.NETHER_STAR).setName("&bYeni Arena Oluştur").build());
+        inv.setItem(53, new ItemBuilder(Material.ARROW).setName("&cGeri Dön").build());
+        
+        return inv;
+    }
+
+    public Inventory createArenaEditorInventory(Arena arena) {
+        Inventory inv = Bukkit.createInventory(null, 36, plugin.getSettingsManager().format("&8Düzenle: &b" + arena.getId()));
+        
+        // Fill background
+        ItemStack filler = new ItemBuilder(Material.GRAY_STAINED_GLASS_PANE).setName(" ").build();
+        for (int i = 0; i < inv.getSize(); i++) inv.setItem(i, filler);
+
+        inv.setItem(10, new ItemBuilder(Material.NAME_TAG).setName("&eGörünen Ad")
+                .setLore(List.of("&7Şu anki: &f" + arena.getDisplayName(), "", "&eDeğiştirmek için tıkla.")).build());
+        
+        inv.setItem(11, new ItemBuilder(Material.COMPASS).setName("&eLobi Konumu")
+                .setLore(List.of("&7Bulunduğunuz yeri lobi yapar.", "", "&eAyarlamak için tıkla.")).build());
+        
+        inv.setItem(12, new ItemBuilder(Material.BEACON).setName("&eMerkez Konumu")
+                .setLore(List.of("&7Bulunduğunuz yeri merkez yapar.", "", "&eAyarlamak için tıkla.")).build());
+        
+        inv.setItem(13, new ItemBuilder(Material.IRON_INGOT).setName("&eTakım Boyutu")
+                .setLore(List.of("&7Şu anki: &f" + arena.getTeamSize(), "", "&eArtırmak için Sol, Azaltmak için Sağ tık.")).build());
+
+        inv.setItem(14, new ItemBuilder(Material.CLOCK).setName("&eTur Süreleri")
+                .setLore(List.of("&7Tur sürelerini yapılandır.", "", "&eDüzenlemek için tıkla.")).build());
+
+        inv.setItem(15, new ItemBuilder(Material.REPEATER).setName("&eDurum")
+                .setLore(List.of("&7Şu anki: &f" + arena.getState(), "", "&eDeğiştirmek için tıkla.")).build());
+
+        inv.setItem(31, new ItemBuilder(Material.ARROW).setName("&cGeri Dön").build());
+        inv.setItem(35, new ItemBuilder(Material.BARRIER).setName("&4ARENAYI SİL").build());
+
         return inv;
     }
 
@@ -107,13 +145,13 @@ public class GuiManager {
         return inv;
     }
 
-    public void openTeamGUI(Player player, org.byauth.game.Arena arena) {
+    public void openTeamGUI(Player player, Arena arena) {
         String title = plugin.getSettingsManager()
                 .format(plugin.getSettingsManager().getMessage("gui.team-select-title"));
         Inventory inv = Bukkit.createInventory(null, 27, title);
 
         int slot = 10;
-        for (org.byauth.game.Team team : org.byauth.game.Team.values()) {
+        for (Team team : Team.values()) {
             if (slot > 16)
                 break;
             inv.setItem(slot++, new ItemBuilder(team.getConcreteMaterial())
