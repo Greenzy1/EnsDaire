@@ -1,6 +1,6 @@
 package org.byauth.controller;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.game.Arena;
 import org.byauth.game.ArenaState;
 import org.byauth.game.Team;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 public class ArenaController {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final SettingsManager settings;
     private final Map<String, Arena> arenas = new HashMap<>();
 
@@ -43,7 +43,7 @@ public class ArenaController {
     private final Map<UUID, Arena> playerArenas = new HashMap<>();
     private final Map<UUID, Arena> spectators = new HashMap<>();
 
-    public ArenaController(ByCircleGame plugin) {
+    public ArenaController(EnsDaire plugin) {
         this.plugin = plugin;
         this.settings = plugin.getSettingsManager();
         loadArenas();

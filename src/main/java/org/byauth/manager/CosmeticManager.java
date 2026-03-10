@@ -5,7 +5,7 @@ import org.byauth.data.VictoryEffect;
 import org.byauth.utils.SettingsManager;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
+import org.byauth.EnsDaire;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -14,11 +14,11 @@ import java.util.Map;
 
 public class CosmeticManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final SettingsManager settingsManager;
     private final List<VictoryEffect> victoryEffects = new ArrayList<>();
 
-    public CosmeticManager(ByCircleGame plugin) {
+    public CosmeticManager(EnsDaire plugin) {
         this.plugin = plugin;
         this.settingsManager = plugin.getSettingsManager();
         loadCosmetics();

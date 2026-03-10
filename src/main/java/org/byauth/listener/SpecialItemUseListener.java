@@ -13,14 +13,14 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.byauth.EnsDaire;
 
 public class SpecialItemUseListener implements Listener {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final ArenaController arenaController;
 
-    public SpecialItemUseListener(ByCircleGame plugin) {
+    public SpecialItemUseListener(EnsDaire plugin) {
         this.plugin = plugin;
         this.arenaController = plugin.getArenaController();
     }

@@ -6,19 +6,19 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.inventory.ItemStack;
+import org.byauth.EnsDaire;
 
 import java.io.File;
 import java.util.*;
 
 public class LootManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final File itemsFile;
     private FileConfiguration itemsConfig;
     private final Map<String, ItemStack> specialItems = new HashMap<>();
 
-    public LootManager(ByCircleGame plugin) {
+    public LootManager(EnsDaire plugin) {
         this.plugin = plugin;
         this.itemsFile = new File(plugin.getDataFolder(), "items.yml");
         loadLoot();

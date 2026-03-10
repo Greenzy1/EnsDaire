@@ -8,9 +8,9 @@ import org.byauth.utils.SettingsManager;
 import org.byauth.utils.VictoryEffects;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class ByCircleGame extends JavaPlugin {
+public final class EnsDaire extends JavaPlugin {
 
-    private static ByCircleGame instance;
+    private static EnsDaire instance;
     private ArenaController arenaController;
     private DatabaseManager databaseManager;
     private PlayerDataManager playerDataManager;
@@ -56,7 +56,7 @@ public final class ByCircleGame extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArenaManagerListener(this), this);
         getServer().getPluginManager().registerEvents(new PlayerEditorListener(this), this);
 
-        getLogger().info("EnsDaire (ByCircleGame Infrastructure) aktif!");
+        getLogger().info("EnsDaire (EnsDaire Infrastructure) aktif!");
     }
 
     @Override

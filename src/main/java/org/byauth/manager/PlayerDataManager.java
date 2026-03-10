@@ -2,7 +2,7 @@ package org.byauth.manager;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.data.PlayerStats;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -16,14 +16,14 @@ import java.util.*;
 
 public class PlayerDataManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final DatabaseManager databaseManager;
     private final Map<UUID, PlayerStats> statsCache = new HashMap<>();
     private final Gson gson = new Gson();
     private final Type stringListType = new TypeToken<ArrayList<String>>() {
     }.getType();
 
-    public PlayerDataManager(ByCircleGame plugin, DatabaseManager databaseManager) {
+    public PlayerDataManager(EnsDaire plugin, DatabaseManager databaseManager) {
         this.plugin = plugin;
         this.databaseManager = databaseManager;
     }

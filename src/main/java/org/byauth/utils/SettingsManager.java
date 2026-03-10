@@ -1,6 +1,6 @@
 package org.byauth.utils;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
@@ -13,7 +13,7 @@ import java.util.*;
 
 public class SettingsManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
     private final LegacyComponentSerializer legacySerializer = LegacyComponentSerializer.legacySection();
     private FileConfiguration config;
@@ -44,7 +44,7 @@ public class SettingsManager {
     public String LEAVE_LOBBY_NAME;
     public org.bukkit.Material LEAVE_LOBBY_MATERIAL;
 
-    public SettingsManager(ByCircleGame plugin) {
+    public SettingsManager(EnsDaire plugin) {
         this.plugin = plugin;
         loadAllConfigs();
     }

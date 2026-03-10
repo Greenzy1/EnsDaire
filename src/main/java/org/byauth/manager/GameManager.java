@@ -12,14 +12,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.util.Vector;
+import org.byauth.EnsDaire;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class GameManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final SettingsManager settings;
     private final PlayerDataManager playerDataManager;
     private final Arena arena;
@@ -33,7 +33,7 @@ public class GameManager {
     private boolean suddenDeath = false;
     private final Map<UUID, Long> snowballCooldown = new HashMap<>();
 
-    public GameManager(ByCircleGame plugin, Arena arena) {
+    public GameManager(EnsDaire plugin, Arena arena) {
         this.plugin = plugin;
         this.settings = plugin.getSettingsManager();
         this.playerDataManager = plugin.getPlayerDataManager();

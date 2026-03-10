@@ -5,7 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
-import org.bukkit.entity.EntityType;
+import org.byauth.EnsDaire;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,10 @@ import java.util.UUID;
 
 public class HologramManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final List<UUID> holograms = new ArrayList<>();
 
-    public HologramManager(ByCircleGame plugin) {
+    public HologramManager(EnsDaire plugin) {
         this.plugin = plugin;
     }
 

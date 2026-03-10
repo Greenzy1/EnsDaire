@@ -1,6 +1,6 @@
 package org.byauth.manager;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.data.ShopItem;
 import org.byauth.utils.ItemBuilder;
 import org.byauth.utils.SettingsManager;
@@ -17,13 +17,13 @@ import java.util.stream.Collectors;
 
 public class ShopManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final SettingsManager settings;
     private final File shopFile;
     private FileConfiguration shopConfig;
     private final List<ShopItem> shopItems = new ArrayList<>();
 
-    public ShopManager(ByCircleGame plugin) {
+    public ShopManager(EnsDaire plugin) {
         this.plugin = plugin;
         this.settings = plugin.getSettingsManager();
         this.shopFile = new File(plugin.getDataFolder(), "shops.yml");

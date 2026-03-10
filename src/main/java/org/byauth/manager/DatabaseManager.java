@@ -1,6 +1,6 @@
 package org.byauth.manager;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 
 import java.io.File;
 import java.sql.Connection;
@@ -11,12 +11,12 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class DatabaseManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private Connection connection;
     private final String dbUrl;
     private final ReentrantLock lock = new ReentrantLock();
 
-    public DatabaseManager(ByCircleGame plugin) {
+    public DatabaseManager(EnsDaire plugin) {
         this.plugin = plugin;
         File dbFile = new File(plugin.getDataFolder(), "playerdata.db");
         if (!dbFile.getParentFile().exists()) {

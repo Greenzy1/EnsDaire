@@ -1,6 +1,6 @@
 name: EnsDaire
 version: '${project.version}'
-main: org.byauth.ByCircleGame
+main: org.byauth.EnsDaire
 api-version: '1.20'
 description: Daireden Son Çıkan Kazanır - EnsDaire Mini Game
 authors: [Ensis]

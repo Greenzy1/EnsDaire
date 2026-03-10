@@ -9,7 +9,7 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.EulerAngle;
 import org.bukkit.util.Vector;
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +17,10 @@ import java.util.Random;
 
 public class VictoryEffects {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final Random random = new Random();
 
-    public VictoryEffects(ByCircleGame plugin) {
+    public VictoryEffects(EnsDaire plugin) {
         this.plugin = plugin;
     }
 

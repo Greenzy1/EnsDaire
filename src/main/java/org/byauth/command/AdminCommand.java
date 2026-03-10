@@ -1,6 +1,6 @@
 package org.byauth.command;
 
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 import org.byauth.controller.ArenaController;
 import org.byauth.game.Arena;
 import org.byauth.game.Team;
@@ -18,12 +18,12 @@ import java.util.Arrays;
 
 public class AdminCommand implements CommandExecutor {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final ArenaController arenaController;
     private final SettingsManager settings;
     private final PlayerDataManager playerDataManager;
 
-    public AdminCommand(ByCircleGame plugin) {
+    public AdminCommand(EnsDaire plugin) {
         this.plugin = plugin;
         this.arenaController = plugin.getArenaController();
         this.settings = plugin.getSettingsManager();

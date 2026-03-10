@@ -9,14 +9,14 @@ import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
+import org.byauth.EnsDaire;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArenaManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final SettingsManager settings;
     private final Arena arena;
     private Location center;
@@ -26,7 +26,7 @@ public class ArenaManager {
     private final int arenaY;
     private final int lavaY;
 
-    public ArenaManager(ByCircleGame plugin, Arena arena) {
+    public ArenaManager(EnsDaire plugin, Arena arena) {
         this.plugin = plugin;
         this.settings = plugin.getSettingsManager();
         this.arena = arena;

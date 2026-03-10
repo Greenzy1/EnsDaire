@@ -8,16 +8,16 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.entity.Player;
+import org.byauth.EnsDaire;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GuiManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
 
-    public GuiManager(ByCircleGame plugin) {
+    public GuiManager(EnsDaire plugin) {
         this.plugin = plugin;
     }
 

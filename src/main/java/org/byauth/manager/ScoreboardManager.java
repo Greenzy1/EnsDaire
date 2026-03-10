@@ -3,7 +3,7 @@ package org.byauth.manager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
-import org.byauth.ByCircleGame;
+import org.byauth.EnsDaire;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class ScoreboardManager {
 
-    private final ByCircleGame plugin;
+    private final EnsDaire plugin;
     private final Map<UUID, Scoreboard> scoreboards = new HashMap<>();
     private final String[] scrollingTitles = {
             "&b&lENSDAIRE",
@@ -27,7 +27,7 @@ public class ScoreboardManager {
     };
     private int titleIndex = 0;
 
-    public ScoreboardManager(ByCircleGame plugin) {
+    public ScoreboardManager(EnsDaire plugin) {
         this.plugin = plugin;
         startTitleAnimation();
     }
