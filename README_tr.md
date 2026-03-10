@@ -9,42 +9,41 @@
 
 ---
 
-# EnsDaire - Professional Circle Mini-Game Plugin
+# EnsDaire - Profesyonel Daire Mini-Oyun Eklentisi (v2.0)
 
-EnsDaire, gelişmiş özellikleri ve tamamen özelleştirilebilir yapısıyla sunucunuza premium bir oyun deneyimi katar.
+EnsDaire, gelişmiş özellikleri, modernize edilmiş kod yapısı ve tamamen özelleştirilebilir yapısıyla sunucunuza premium bir oyun deneyimi katar. 2.0 sürümü ile birlikte altyapı tamamen yenilenmiş ve performans optimize edilmiştir.
 
 ## 🌟 Öne Çıkan Özellikler
 
-*   **GUI Odaklı Yönetim:** Tüm oyuncu ve admin işlemleri modern, konfigüre edilebilir arayüzler üzerinden yapılır.
-*   **Gelişmiş Kozmetikler:** Kill efektleri, kazanma efektleri ve daha fazlasını içeren gelişmiş kozmetik sistemi.
-*   **Dinamik BossBar & Actionbar:** Oyun durumunu (geri sayım, süre, sağ kalanlar) takip eden animasyonlu göstergeler.
-*   **Hareketli Scoreboard:** Özelleştirilebilir, animasyonlu başlıklar ve kapsamlı bilgi tablosu.
-*   **Holografik Liderlik Tablosu:** İlk 10 oyuncuyu gösteren şık, premium görünümlü liderlik tabloları.
-*   **Tamamen Veri Odaklı:** GUI başlıklarından slotlara, item lore'larından materyallere kadar her şey YAML dosyalarıyla değiştirilebilir.
-*   **Modern Kod Yapısı:** Gelişmiş API, NamespacedKey tabanlı item tanıma ve performans odaklı mimari.
+*   **Modernize Edilmiş Mimari (v2.0):** Kod yapısı `org.byauth` paket yapısına taşındı, daha modüler ve genişletilebilir bir sistem kuruldu.
+*   **GUI Odaklı Yönetim:** Tüm oyuncu ve admin işlemleri modern, konfigüre edilebilir arayüzler (`menus/` klasörü) üzerinden yapılır.
+*   **Gelişmiş Kozmetikler:** Kazanma efektleri, özel market sistemi ve BCoin entegrasyonu.
+*   **Dinamik Scoreboard & Hologram:** Özelleştirilebilir, performans dostu skor tabloları ve `TextDisplay` tabanlı liderlik sıralamaları.
+*   **Esnek Konfigürasyon:** `config.yml`, `guis.yml`, `cosmetics.yml` ve detaylı dil dosyaları ile her detayı kontrol edin.
+*   **Gelişmiş Arena Kontrolü:** Kolay kurulum menüleri, otomatik arena oluşturma ve gelişmiş lobi sistemleri.
 
 ## 🛠️ Komutlar
 
-*   `/daire` - Ana oyun menüsünü açar (Arena Seçimi).
-*   `/katil <arena>` - Belirtilen arenaya hızlıca katılır.
-*   `/ayril` - Mevcut oyundan ayrılır (Durum verilerini geri yükler).
-*   `/kozmetik` - Kozmetik mağazasını açar.
-*   `/istatistik` - Kişisel verilerinizi gösterir.
-*   `/ed admin` - Yönetim panelini açar.
-*   `/ed reload` - Tüm dosyaları anında yeniler.
+| Komut | Takma Ad | Açıklama |
+| :--- | :--- | :--- |
+| `/ensdaire` | `/ed`, `/daire` | Ana admin komutu ve yönetim paneli. |
+| `/katil` | - | Uygun bir arenaya hızlıca katılır. |
+| `/ayril` | - | Aktif arenadan ayrılır. |
+| `/kozmetik` | `/market` | Kozmetik/Market menüsünü açar. |
+| `/destekle` | `/destek` | İzleyici modundayken oyuncuları destekler. |
 
-## ⚙️ Konfigürasyon Dosyaları
+## ⚙️ Yenilenen Dosya Yapısı
 
-*   `config.yml`: Genel oyun ayarları, süreler ve mekanikler.
-*   `guis.yml`: Tüm arayüzlerin (Menu) tasarımı, başlıkları ve itemları.
-*   `cosmetics.yml`: Kozmetik kategorileri ve içerikleri.
-*   `messages_tr.yml`: Tüm dildeki mesajların ve prefixlerin ayarı.
+*   `config.yml`: Global oyun ayarları (süreler, lobi ayarları, para sistemi).
+*   `menus/`: Arayüz tasarımlarının bulunduğu klasör (admin paneli, arena yönetimi vb.).
+*   `lang/`: Çoklu dil desteği (Varsayılan: `messages_tr.yml`).
+*   `arenas/`: Oluşturulan arenaların kayıt edildiği veri klasörü.
 
-## 🚀 Kurulum
+## 🚀 Kurulum ve Güncelleme
 
-1.  Jar dosyasını `plugins` klasörüne atın.
-2.  Sunucuyu başlatın ve oluşan dosyaları isteğinize göre düzenleyin.
-3.  `/ed reload` komutuyla ayarlarınızı uygulayın.
+1.  `EnsDaire-2.0.jar` dosyasını `plugins` klasörüne atın.
+2.  Bağımlılıklar: `Paper 1.20.1+`, `PlaceholderAPI`, `Vault`, `LuckPerms`.
+3.  Sunucuyu başlatın ve `/ensdaire setlobby <arena>` ile başlangıç noktalarını belirleyin.
 
 ---
 **Ensis Geliştirme Ekibi** | [ensis.net](https://ensis.net)
@@ -53,50 +52,4 @@ EnsDaire, gelişmiş özellikleri ve tamamen özelleştirilebilir yapısıyla su
 [![Version](https://img.shields.io/badge/Version-2.0-blue.svg)]()
 [![Database](https://img.shields.io/badge/Database-SQLite-red.svg)]()
 
-
 </div>
-
----
-
-## ✦ ö ᴢ ᴇ ʟ ʟ ɪ ᴋ ʟ ᴇ ʀ
-
-* **ᴅɪɴᴀᴍɪᴋ ᴀʀᴇɴᴀʟᴀʀ:** Gelişmiş, sezgisel bir oyun-içi menü aracılığıyla tamamen sınırsız arenalar oluşturun, düzenleyin ve yönetin (`/daire admin`).
-* **ɢᴇʟɪşᴍɪş ᴋᴏᴢᴍᴇᴛɪᴋ ꜱɪꜱᴛᴇᴍɪ:** Sunucular için özel olarak tasarlanmış, tamamen entegre bir kozmetik marketi (`/daire market`). Öldürme Efektleri, Ok İzleri, Kazanma Efektleri ve Yürüme İzleri içerir.
-* **ᴋᴀᴘꜱᴀᴍʟɪ öᴢᴇʟʟᴇşᴛɪʀᴍᴇ:** `config.yml` (jetonlar, puanlar, renkler, bloklar, shulker eşyaları) dosyasından tutun, çoklu dil sistemine kadar (`tr_TR`, `en_US`, vb.) her şey baştan aşağı düzenlenebilir.
-* **ᴛᴇᴍᴇʟ ᴍᴇᴋᴀɴɪᴋʟᴇʀ:** 
-    * Partikül izleme sınırlarına sahip renge dayalı hayatta kalma bölgeleri.
-    * Merkezi güvenli bölgeler (`IRON_BLOCK`, `QUARTZ_BLOCK`).
-    * Üst düzey eşya dağıtımı için yapılandırılabilir Shulker Kutusu alanları.
-* **ᴏʏᴜɴᴄᴜ ᴠᴇʀɪꜱɪ ᴠᴇ ʀüᴛʙᴇʟᴇʀ:** K/D oranlarını, Galibiyet Yüzdelerini saklayan ve jeton kazanımıyla eş zamanlı çalışan otomatik Rütbe Atlama sistemini yürüten yerel SQLite altyapısı.
-* **ʜᴏʟᴏɢʀᴀᴍ & ʙᴏꜱꜱʙᴀʀ ᴇɴᴛᴇɢʀᴀꜱʏᴏɴᴜ:** Yerleşik `TextDisplay` tabanlı en iyiler sıralaması (Leaderboard) ve tamamen yapılandırılabilir BossBar (Renk, Stil) desteği.
-* **ꜱᴍᴀʟʟ ᴄᴀᴘꜱ ᴀʀᴀʏüᴢ:** Tüm menülerde (GUI) ve skor tablolarında standart olarak kullanılan ultra-premium Small Caps tasarımı (`ᴀʀᴇɴᴀ ꜱᴇçɪᴍɪ`, `ᴀᴅᴍɪɴ ᴘᴀɴᴇʟɪ`).
-
----
-
-## ✦ ᴋ ᴏ ᴍ ᴜ ᴛ ʟ ᴀ ʀ
-
-Tüm işlevler bütünleşik bir komut hiyerarşisi üzerinden yönetilir.
-
-| Komut | Yetki | Açıklama |
-| :--- | :--- | :--- |
-| `/daire` | `Yok` | Ana Katılım/Arena Seçim menüsüne erişir. |
-| `/katil` | `Yok` | Hızlıca durumu uygun olan arenaya katılır. |
-| `/ayril` | `Yok` | Arenadan ayrılır ve bir önceki konuma/duruma geri döner. |
-| `/daire istatistik` | `Yok` | Bireysel savaş istatistiklerini gösterir. |
-| `/daire market` | `Yok` | Kapsamlı Kozmetik arayüzünü açar. |
-| `/daire admin` | `ensdaire.admin` | Evrensel Yönetim Paneli'ne (GUI) erişir. |
-| `/ed admin create <id>` | `ensdaire.admin` | Yeni, bağımsız bir arena ortamı oluşturur. |
-| `/ed reload` | `ensdaire.admin` | Konfigürasyonları ve dil dosyalarını önbellekten yeniler. |
-
----
-
-## ✦ ᴋ ᴜ ʀ ᴜ ʟ ᴜ ᴍ
-
-1. **ᴅᴇᴘʟᴏʏᴍᴇɴᴛ:** `EnsDaire-2.0.jar` dosyasını `/plugins` klasörüne kopyalayın.
-2. **ᴅᴇᴘᴇɴᴅᴇɴᴄɪᴇꜱ:** Sunucunuzda `PlaceholderAPI` ve `Vault` eklentilerinin yüklü olduğundan emin olun.
-3. **ɪɴɪᴛɪᴀʟɪᴢᴀᴛɪᴏɴ:** Konfigürasyon dosyalarını oluşturması için Minecraft sunucusunu yeniden başlatın.
-4. **ᴀʀᴇɴᴀ ʜᴀᴢɪʀʟᴀᴍᴀ:** 
-    * `/ed admin create <ArenaAdı>` komutunu girin.
-    * `/daire admin` -> `ᴀʀᴇɴᴀ ʏöɴᴇᴛɪᴍɪ` menüsünden yeni oluşturduğunuz arenaya tıklayın.
-    * Lobi, İzleyici spawn noktalarını ve renkli kapsül doğma noktalarını belirleyin.
-    * Arena modül durumunu AÇIK hale getirin.
