@@ -24,22 +24,6 @@ public class ArenaController {
     private final EnsDaire plugin;
     private final SettingsManager settings;
     private final Map<String, Arena> arenas = new HashMap<>();
-
-    public List<Arena> getArenas() {
-        return new ArrayList<>(arenas.values());
-    }
-
-    public Arena getOrCreateArena(String name) {
-        return arenas.computeIfAbsent(name, n -> new Arena(plugin, n));
-    }
-
-    public void buildLobby(Arena arena) {
-        // Logic to build a physical lobby if needed, or just prepare locations
-        if (arena.getLobbyLocation() != null) {
-            // Optional: placeholder for physical structure generation
-        }
-    }
-
     private final Map<UUID, Arena> playerArenas = new HashMap<>();
     private final Map<UUID, Arena> spectators = new HashMap<>();
 
@@ -50,193 +34,115 @@ public class ArenaController {
     }
 
     public void loadArenas() {
-        if (settings.getArenaNames() == null)
-            return;
-
+        if (settings.getArenaNames() == null) return;
         for (String arenaName : settings.getArenaNames()) {
-            Location lobby = settings.getArenaLocation(arenaName, "lobby");
-            Location center = settings.getArenaLocation(arenaName, "center");
-
-            if (lobby != null && lobby.getWorld() != null) {
-                Arena arena = arenas.computeIfAbsent(arenaName, n -> new Arena(plugin, n));
-                arena.setLobbyLocation(lobby);
-                arena.setCenterLocation(center);
-                arena.setTeamSize(settings.getTeamSize(arenaName));
-                arena.setRoundDurations(settings.getRoundDurations(arenaName));
-                arena.setDisplayName(settings.getDisplayName(arenaName));
-            }
+            getOrCreateArena(arenaName);
         }
     }
 
-    public void addPlayer(Player player, String arenaName) {
-        Arena currentArena = getArenaByPlayerIncludingSpectators(player);
-        if (currentArena != null) {
-            removePlayer(player);
+    public List<Arena> getArenas() {
+        return new ArrayList<>(arenas.values());
+    }
+
+    public Arena getOrCreateArena(String name) {
+        return arenas.computeIfAbsent(name, n -> new Arena(plugin, n));
+    }
+
+    public void addPlayer(Player player, Arena arena) {
+        if (arena.getState() != ArenaState.WAITING && arena.getState() != ArenaState.STARTING) {
+            player.sendMessage(settings.format(settings.getMessage("error.arena-not-found")));
+            return;
+        }
+        
+        if (arena.getPlayers().size() >= arena.getMaxPlayers()) {
+            player.sendMessage(settings.format(settings.getMessage("error.arena-full")));
+            return;
         }
 
-        Arena arena = arenas.get(arenaName);
-        if (arena == null)
-            return;
-
-        if (arena.getState() != ArenaState.WAITING && arena.getState() != ArenaState.COUNTDOWN)
-            return;
-
-        int maxPlayers = Team.values().length * arena.getTeamSize();
-        if (arena.getPlayers().size() >= maxPlayers)
-            return;
-
-        arena.getPlayers().add(player.getUniqueId());
         playerArenas.put(player.getUniqueId(), arena);
-
-        player.teleport(arena.getLobbyLocation().clone().add(0.5, 2, 0.5));
-        player.setGameMode(GameMode.SURVIVAL);
+        arena.getPlayers().add(player.getUniqueId());
+        
+        var msg = settings.getMessage("game.player-join").replace("%player%", player.getName());
+        broadcastArenaMessage(arena, msg);
+        
+        if (arena.getLobbyLocation() != null) {
+            player.teleport(arena.getLobbyLocation());
+        }
+        
         giveLobbyItems(player);
-        updatePlayerVisibility(player);
-
-        checkAndStartCountdown(arena);
     }
 
     public void removePlayer(Player player) {
-        Arena arena = playerArenas.get(player.getUniqueId());
-        if (arena == null) {
-            arena = spectators.get(player.getUniqueId());
+        Arena arena = playerArenas.remove(player.getUniqueId());
+        if (arena != null) {
+            arena.getPlayers().remove(player.getUniqueId());
+            arena.getSpectators().remove(player.getUniqueId());
+            
+            var msg = settings.getMessage("game.player-quit").replace("%player%", player.getName());
+            broadcastArenaMessage(arena, msg);
+            
+            player.getInventory().clear();
+            player.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
         }
-
-        if (arena == null)
-            return;
-
-        arena.getPlayers().remove(player.getUniqueId());
-        arena.getSpectators().remove(player.getUniqueId());
-        playerArenas.remove(player.getUniqueId());
-        spectators.remove(player.getUniqueId());
-
-        player.getInventory().clear();
-        player.setGameMode(GameMode.SURVIVAL);
-        player.teleport(settings.getMainSpawnLocation() != null ? settings.getMainSpawnLocation()
-                : Bukkit.getWorlds().get(0).getSpawnLocation());
-        updatePlayerVisibility(player);
-    }
-
-    public void checkAndStartCountdown(Arena arena) {
-        if (arena.getState() == ArenaState.WAITING && arena.getPlayers().size() >= settings.MIN_PLAYERS_TO_START) {
-            startLobbyCountdown(arena);
-        }
-    }
-
-    private void startLobbyCountdown(Arena arena) {
-        arena.setState(ArenaState.COUNTDOWN);
-        new BukkitRunnable() {
-            int countdown = settings.LOBBY_COUNTDOWN_SECONDS;
-
-            @Override
-            public void run() {
-                if (arena.getState() != ArenaState.COUNTDOWN) {
-                    this.cancel();
-                    return;
-                }
-                if (arena.getPlayers().size() < settings.MIN_PLAYERS_TO_START) {
-                    arena.setState(ArenaState.WAITING);
-                    this.cancel();
-                    return;
-                }
-                if (countdown > 0) {
-                    countdown--;
-                } else {
-                    this.cancel();
-                    arena.getGameManager().startGame(arena.getCenterLocation());
-                }
-            }
-        }.runTaskTimer(plugin, 0L, 20L);
     }
 
     private void giveLobbyItems(Player player) {
         player.getInventory().clear();
-        player.getInventory().setItem(settings.TEAM_SELECTOR_SLOT,
-                new ItemBuilder(settings.TEAM_SELECTOR_MATERIAL).setName(settings.TEAM_SELECTOR_NAME).build());
-        player.getInventory().setItem(settings.LEAVE_LOBBY_SLOT,
-                new ItemBuilder(settings.LEAVE_LOBBY_MATERIAL).setName(settings.LEAVE_LOBBY_NAME).build());
-    }
-
-    public void selectTeam(Player player, Team team) {
-        Arena arena = getArenaByPlayer(player);
-        if (arena != null) {
-            arena.getGameManager().setPlayerTeam(player, team);
-            player.sendMessage(SettingsManager.PREFIX + "§aTakım seçildi: " + team.getDisplayName());
-        }
-    }
-
-    public void unselectTeam(Player player) {
-        Arena arena = getArenaByPlayer(player);
-        if (arena != null) {
-            arena.getGameManager().removePlayerFromTeam(player);
-            player.sendMessage(SettingsManager.PREFIX + "§eTakım seçimi iptal edildi.");
-        }
-    }
-
-    public void openTeamSelectionGUI(Player player) {
-        Arena arena = getArenaByPlayer(player);
-        if (arena != null) {
-            plugin.getGuiManager().openTeamGUI(player, arena);
-        }
-    }
-
-    public void updatePlayerVisibility(Player subject) {
-        Arena subjectArena = getArenaByPlayerIncludingSpectators(subject);
-        for (Player observer : Bukkit.getOnlinePlayers()) {
-            if (subject.equals(observer))
-                continue;
-            Arena observerArena = getArenaByPlayerIncludingSpectators(observer);
-            boolean shouldSee = (subjectArena == null && observerArena == null)
-                    || (subjectArena != null && subjectArena.equals(observerArena));
-            if (shouldSee) {
-                subject.showPlayer(plugin, observer);
-                observer.showPlayer(plugin, subject);
-            } else {
-                subject.hidePlayer(plugin, observer);
-                observer.hidePlayer(plugin, subject);
-            }
-        }
-    }
-
-    public void addSpectator(Player player, Arena arena) {
-        arena.getSpectators().add(player.getUniqueId());
-        spectators.put(player.getUniqueId(), arena);
-        player.setGameMode(GameMode.SPECTATOR);
+        player.getInventory().setItem(0, new ItemBuilder(settings.TEAM_SELECTOR_MATERIAL)
+                .setName(settings.format("&e&lᴛᴀᴋɪᴍ ꜱᴇçɪᴍɪ &7(ꜱᴀğ ᴛɪᴋ)")).build());
+        player.getInventory().setItem(8, new ItemBuilder(settings.LEAVE_LOBBY_MATERIAL)
+                .setName(settings.format("&ᴄ&ʟʟᴏʙɪᴅᴇɴ ᴀʏʀɪʟ &7(ꜱᴀğ ᴛɪᴋ)")).build());
     }
 
     public void broadcastArenaMessage(Arena arena, String message) {
-        for (UUID uuid : arena.getPlayers()) {
-            Player p = Bukkit.getPlayer(uuid);
-            if (p != null)
-                p.sendMessage(SettingsManager.PREFIX + message);
-        }
-        for (UUID uuid : arena.getSpectators()) {
-            Player p = Bukkit.getPlayer(uuid);
-            if (p != null)
-                p.sendMessage(SettingsManager.PREFIX + message);
-        }
+        var formatted = settings.PREFIX + settings.format(message);
+        arena.getPlayers().forEach(uuid -> {
+            var p = Bukkit.getPlayer(uuid);
+            if (p != null) p.sendMessage(formatted);
+        });
     }
 
-    public void teleportToMainSpawn(Player player) {
-        Location spawn = settings.getMainSpawnLocation();
-        if (spawn != null)
-            player.teleport(spawn);
-        else
-            player.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-    }
-
-    public Arena getArenaByPlayerIncludingSpectators(Player player) {
+    public void updatePlayerVisibility(Player player) {
         Arena arena = playerArenas.get(player.getUniqueId());
-        return arena != null ? arena : spectators.get(player.getUniqueId());
+        for (Player online : Bukkit.getOnlinePlayers()) {
+            Arena onlineArena = playerArenas.get(online.getUniqueId());
+            if (arena == null || onlineArena == null || !arena.equals(onlineArena)) {
+                player.hidePlayer(plugin, online);
+                online.hidePlayer(plugin, player);
+            } else {
+                player.showPlayer(plugin, online);
+                online.showPlayer(plugin, player);
+            }
+        }
     }
 
     public Arena getArenaByPlayer(Player player) {
         return playerArenas.get(player.getUniqueId());
     }
 
-    public void shutdown() {
-        for (Arena arena : arenas.values()) {
-            arena.getArenaManager().destroyArena();
-        }
+    public void addSpectator(Player player, Arena arena) {
+        arena.getSpectators().add(player.getUniqueId());
+        player.setGameMode(GameMode.SPECTATOR);
+        player.getInventory().clear();
+        player.sendMessage(settings.format(settings.PREFIX + "&eɪᴢʟᴇʏɪᴄɪ ᴍᴏᴅᴜɴᴀ ɢᴇçᴛɪɴɪᴢ."));
+    }
+
+    public void selectTeam(Player player, Team team) {
+        Arena arena = getArenaByPlayer(player);
+        if (arena == null) return;
+        arena.getGameManager().setPlayerTeam(player, team);
+        var msg = settings.getMessage("game.team-select").replace("%team%", team.getDisplayName());
+        player.sendMessage(settings.format(settings.PREFIX + msg));
+    }
+
+    public void unselectTeam(Player player) {
+        Arena arena = getArenaByPlayer(player);
+        if (arena == null) return;
+        arena.getGameManager().removePlayerFromTeam(player);
+        player.sendMessage(settings.format(settings.PREFIX + "&7ᴛᴀᴋɪᴍ ꜱᴇçɪᴍɪ ɪᴘᴛᴀʟ ᴇᴅɪʟᴅɪ."));
+    }
+
+    public void openTeamSelectionGUI(Player player) {
+        plugin.getGuiManager().openTeamGUI(player, getArenaByPlayer(player));
     }
 }

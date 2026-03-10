@@ -32,51 +32,37 @@ public class AdminCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("ensdaire.admin")) {
-            sender.sendMessage(ChatColor.RED + "Yetkiniz yok!");
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(ChatColor.RED + "ʙᴜ ᴋᴏᴍᴜᴛᴜ ꜱᴀᴅᴇᴄᴇ ᴏʏᴜɴᴄᴜʟᴀʀ ᴋᴜʟʟᴀɴᴀʙɪʟɪʀ.");
+            return true;
+        }
+
+        Player p = (Player) sender;
+
+        if (!p.hasPermission("ensdaire.admin")) {
+            p.sendMessage(settings.format(settings.getMessage("error.no-permission")));
             return true;
         }
 
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.YELLOW + "/ensdaire setlobby <arena>");
-            sender.sendMessage(ChatColor.YELLOW + "/ensdaire setcenter <arena>");
-            sender.sendMessage(ChatColor.YELLOW + "/ensdaire givepoints <player> <amount>");
+            p.openInventory(plugin.getGuiManager().createInventoryFromConfig("admin_main"));
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("setlobby")) {
-            if (!(sender instanceof Player))
-                return true;
-            Player p = (Player) sender;
-            if (args.length < 2)
-                return true;
-            Arena arena = arenaController.getOrCreateArena(args[1]);
-            arena.setLobbyLocation(p.getLocation());
-            settings.saveArenaLocation(args[1], "lobby", p.getLocation());
-            arenaController.buildLobby(arena);
-            p.sendMessage(ChatColor.GREEN + "Lobi ayarlandı!");
-        } else if (args[0].equalsIgnoreCase("setcenter")) {
-            if (!(sender instanceof Player))
-                return true;
-            Player p = (Player) sender;
-            if (args.length < 2)
-                return true;
-            Arena arena = arenaController.getOrCreateArena(args[1]);
-            arena.setCenterLocation(p.getLocation());
-            settings.saveArenaLocation(args[1], "center", p.getLocation());
-            arena.getArenaManager().generateArena(p.getLocation(), Arrays.asList(Team.values()));
-            p.sendMessage(ChatColor.GREEN + "Arena merkezi ayarlandı ve oluşturuldu!");
-        } else if (args[0].equalsIgnoreCase("setleaderboard")) {
-            if (!(sender instanceof Player))
-                return true;
-            Player p = (Player) sender;
+        if (args[0].equalsIgnoreCase("setup")) {
             if (args.length < 2) {
-                p.sendMessage(ChatColor.RED + "/ensdaire setleaderboard <points/kills/wins>");
+                p.sendMessage(ChatColor.RED + "ᴋᴜʟʟᴀɴɪᴍ: /ᴇɴꜱᴅᴀɪʀᴇ ꜱᴇᴛᴜᴘ <ᴀʀᴇɴᴀ_ᴀᴅɪ>");
                 return true;
             }
-            String type = args[1].toLowerCase();
-            plugin.getHologramManager().createLeaderboard(p.getLocation(), type);
-            p.sendMessage(ChatColor.GREEN + type.toUpperCase() + " sıralaması oluşturuldu!");
+            Arena arena = arenaController.getOrCreateArena(args[1]);
+            p.openInventory(plugin.getGuiManager().createArenaEditorInventory(arena));
+            return true;
+        }
+
+        if (args[0].equalsIgnoreCase("reload")) {
+            settings.reload();
+            p.sendMessage(settings.format(settings.getMessage("admin.reload")));
+            return true;
         }
 
         return true;

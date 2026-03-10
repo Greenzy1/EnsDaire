@@ -12,7 +12,6 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.byauth.EnsDaire;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -69,42 +68,37 @@ public class GameManager {
         unassignPlayerFromTeam(player);
     }
 
-    public List<UUID> getPlayersInTeam(Team team) {
-        return teams.getOrDefault(team, new ArrayList<>());
+    public void broadcastArenaMessage(String message) {
+        plugin.getArenaController().broadcastArenaMessage(arena, message);
     }
 
-    public void startGame(Location center) {
+    public void startGame() {
         arena.setState(ArenaState.STARTING);
-        List<Player> playersInArena = new ArrayList<>();
-        for (UUID uuid : arena.getPlayers()) {
-            Player p = Bukkit.getPlayer(uuid);
-            if (p != null)
-                playersInArena.add(p);
-        }
-
-        assignPlayersToTeams(playersInArena);
+        broadcastArenaMessage(settings.getMessage("game.start"));
+        
         this.roundDurations = arena.getRoundDurations();
         if (this.roundDurations == null || this.roundDurations.isEmpty()) {
             this.roundDurations = Arrays.asList(120, 90, 60);
         }
 
-        startInterRoundPhase(true);
-    }
-
-    private void startInterRoundPhase(boolean isFirstRound) {
-        arena.setState(ArenaState.STARTING);
-        // ... Inter round logic (pods, etc.)
         startNextRound();
     }
 
     private void startNextRound() {
         currentRound++;
+        if (currentRound > roundDurations.size()) {
+            startSuddenDeath();
+            return;
+        }
+        
         arena.setState(ArenaState.ACTIVE);
+        var msg = settings.getMessage("game.round-start").replace("%round%", String.valueOf(currentRound));
+        broadcastArenaMessage(msg);
         startRoundTimer();
     }
 
     private void startRoundTimer() {
-        int duration = roundDurations.size() >= currentRound ? roundDurations.get(currentRound - 1) : 60;
+        int duration = roundDurations.get(currentRound - 1);
         roundTimerTask = new BukkitRunnable() {
             int timeLeft = duration;
 
@@ -121,11 +115,17 @@ public class GameManager {
     }
 
     private void endRound() {
+        broadcastArenaMessage(settings.getMessage("game.round-end"));
         if (currentRound >= roundDurations.size()) {
-            checkWinCondition();
-            return;
+            startSuddenDeath();
+        } else {
+            startNextRound();
         }
-        startInterRoundPhase(false);
+    }
+
+    private void startSuddenDeath() {
+        suddenDeath = true;
+        broadcastArenaMessage(settings.getMessage("game.sudden-death"));
     }
 
     public boolean checkWinCondition() {
@@ -139,37 +139,13 @@ public class GameManager {
                 Player winner = Bukkit.getPlayer(winnerUuid);
                 if (winner != null) {
                     plugin.getVictoryEffects().playRandomVictoryEffect(winner);
-                    Bukkit.broadcastMessage(
-                            settings.PREFIX + settings.format("&b" + winner.getName() + " &aoyunu kazandı!"));
+                    var msg = settings.getMessage("game.winner").replace("%player%", winner.getName());
+                    Bukkit.broadcastMessage(settings.PREFIX + settings.format(msg));
                 }
             }
-            stopGame(true);
             return true;
         }
         return false;
-    }
-
-    public void stopGame(boolean broadcast) {
-        arena.setState(ArenaState.RESETTING);
-        // Reset logic
-    }
-
-    private void assignPlayersToTeams(List<Player> playersInArena) {
-        // Simplified auto-assign
-        List<Team> availableTeams = new ArrayList<>(Arrays.asList(Team.values()));
-        Collections.shuffle(availableTeams);
-        int i = 0;
-        for (Player p : playersInArena) {
-            if (!playerTeams.containsKey(p.getUniqueId())) {
-                Team team = availableTeams.get(i % availableTeams.size());
-                assignPlayerToTeam(p, team);
-                i++;
-            }
-        }
-    }
-
-    public boolean isTeamAlive(Team team) {
-        return teams.get(team).stream().anyMatch(uuid -> !arena.getSpectators().contains(uuid));
     }
 
     public Map<Location, Team> getPlayerPlacedBlocks() {
